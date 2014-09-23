@@ -1,0 +1,322 @@
+﻿@model CarsShop.Models.Car
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+<form action="/test">
+    <div class="jumbotron" style="margin-top: inherit; margin-left:-1px; width:1170px;">
+        <h2 style="font-size:36px; text-align: center;"><b>Поиск транспорта</b></h2>
+        <p class="lead" style="text-align:center">Выбирите параметры посика автомобиля</p>
+
+        <div class="row">
+            <div class="col-md-3">
+
+                <span class="helvetica4">
+                    Марка
+                </span>
+                <select style="width:120px;height:30px; border-radius:15px" id="mark" name="Mark">
+                    <option value="" selected></option>
+                    <option value="Audi">Audi</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Citroen">Citroen</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Gelly">Gelly</option>
+                    <option value="Hodna">Hodna</option>
+                    <option value="Infiniti">Infiniti</option>
+                    <option value="Lexus">Lexus</option>
+                    <option value="Mazda">Mazda</option>
+                    <option value="Mercedes">Mercedes</option>
+                    <option value="Opel">Opel</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Skoda">Skoda</option>
+                    <option value="Wolkswagen">Wolkswagen</option>
+                </select>
+
+                <br />
+                <span class="helvetica4">
+                    Модель
+                </span>
+                <select style="width:120px;height:30px; border-radius:15px" id="series" name="Series"></select>
+
+
+
+                <br />
+                <span class="helvetica4">
+                    Тип кузова
+                </span>
+                <select style="width:120px;height:30px; border-radius:15px" id="model" name="Model">
+                    <option value=""></option>
+                    @*<option value="Купэ" class="Series-3 Series-6 A5">Купэ</option>
+                        <option value="Кабриолет" class="Series-3 Series-6 A3 A5">Кабриолет</option>
+                        <option value="Седан" class="Series-3 Series-5 A3 A4">Седан</option>
+                        <option value="Спортбэк" class="A3 A5">Спортбэк</option>*@
+                </select>
+
+                <br />
+            </div>
+
+            <div class="col-md-4">
+                <span class="helvetica4">
+                    Тип топлива
+                </span>
+                <select style="width:100px;height:30px; border-radius:15px" id="toplivo" name="toplivo">
+                    <option value=""></option>
+                    <option value="газ">Газ</option>
+                    <option value="бензин">Бензин</option>
+                    <option value="ДТ">ДТ</option>
+                </select>
+
+                <br />
+
+                <span class="helvetica4">
+                    Трансмиссия
+                </span>
+                <select style="width:120px;height:30px; border-radius:15px" id="transmission" name="transmission">
+                    <option value=""></option>
+                    <option value="Автоматическая">Автоматическая</option>
+                    <option value="Механическая">Механическая</option>
+                </select>
+
+                <br />
+            </div>
+
+            <div class="col-md-5">
+                <span class="helvetica4">Цена от</span>
+                <select style="width:70px;height:30px; border-radius:15px" id="price_min" name="price_min">
+                    <option value=""></option>
+                    <option value="менее 10000">менее 10000</option>
+                    <option value="15000">15000</option>
+                    <option value="20000">20000</option>
+                    <option value="25000">25000</option>
+                    <option value="50000">50000</option>
+                    <option value="100000">100000</option>
+
+                </select>
+                <span class="helvetica4" style="margin-left:91px;">до</span>
+                <select style="width:70px;height:30px; border-radius:15px" id="price_max" name="price_max">
+                    <option value=""></option>
+
+                    <option value="15000">15000</option>
+                    <option value="20000">20000</option>
+                    <option value="25000">25000</option>
+                    <option value="50000">50000</option>
+                    <option value="100000">100000</option>
+                    <option value="более 100000">более 100000</option>
+                </select>
+                <br />
+
+                <span class="helvetica4">Год выпуска с</span>
+                <select style="width:70px;height:30px; border-radius:15px" id="age_min" name="age_min">
+                    <option value=""></option>
+                    <option value="2000">2000</option>
+                    <option value="2001">2001</option>
+                    <option value="2002">2002</option>
+                    <option value="2003">2003</option>
+                    <option value="2004">2004</option>
+                    <option value="2005">2005</option>
+                    <option value="2006">2006</option>
+                    <option value="2007">2007</option>
+                    <option value="2008">2008</option>
+                    <option value="2009">2009</option>
+                    <option value="2010">2010</option>
+                    <option value="2011">2011</option>
+                    <option value="2012">2012</option>
+                    <option value="2013">2013</option>
+                </select>
+
+                <span class="helvetica4" style="margin-left: 91px;">по</span>
+                <select style="width:70px;height:30px; border-radius:15px" id="age_max" name="age_max">
+                    <option value=""></option>
+                    <option value="2001">2001</option>
+                    <option value="2002">2002</option>
+                    <option value="2003">2003</option>
+                    <option value="2004">2004</option>
+                    <option value="2005">2005</option>
+                    <option value="2006">2006</option>
+                    <option value="2007">2007</option>
+                    <option value="2008">2008</option>
+                    <option value="2009">2009</option>
+                    <option value="2010">2010</option>
+                    <option value="2011">2011</option>
+                    <option value="2012">2012</option>
+                    <option value="2013">2013</option>
+                    <option value="2014">2014</option>
+                </select>
+                <br />
+
+            </div>
+        </div>
+        <div class="panel-group" id="accordion" style="margin-top:17px">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" style="margin-left:766px">
+                            <font face="Helveica" size="4">
+                                Расширенный поиск
+                            </font>
+                        </a>
+                    </h4>
+                </div>
+
+                <div id="collapseOne" class="panel-collapse collapse out">
+                    <div class="panel-body" style="background-color:beige">
+                        <div class="row " style="margin-left:20px">
+                            <div class="col-md-6">
+                                <div class="checkbox helvetica4">
+                                    <p>
+                                        <input type="checkbox" checked="checked" id="Conditioner" name="Conditioner" />Кондиционер
+
+                                    </p>
+                                </div>
+                                <div class="checkbox helvetica4">
+                                    <p>
+                                        <input type="checkbox" />Кожаный салон
+                                    </p>
+                                </div>
+                                <div class="checkbox helvetica4">
+                                    <p>
+                                        <input type="checkbox" />Подогрев сидений
+                                    </p>
+                                </div>
+                                <div class="checkbox helvetica4" />
+                                <p>
+                                    <input type="checkbox">Парктроник
+                                </p>
+                            </div>
+                            <div class="checkbox helvetica4">
+                                <p>
+                                    <input type="checkbox">Ксенон
+                                </p>
+                            </div>
+                            <div class="checkbox helvetica4">
+                                <p>
+                                    <input type="checkbox">Громкая связь
+                                </p>
+                            </div>
+                            <div class="checkbox helvetica4">
+                                <p>
+                                    <input type="checkbox">Легкосплавленные диски
+                                </p>
+                            </div>
+                            <div class="checkbox helvetica4">
+                                <p>
+                                    <input type="checkbox">Система контроля стабилизации
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <span class="helvetica4">
+                                Страна
+                            </span>
+                            <select id="country" style="width:120px;height:30px; border-radius:15px" name="Country">
+                                <option value="null" selected></option>
+                                <option value="Беларусь">Беларусь</option>
+                                <option value="Германия">Германия</option>
+                                <option value="Россия">Россия</option>
+                                <option value="Польша">Польша</option>
+                                <option value="Литва">Литва</option>
+                                <option value="Украина">Украина</option>
+                            </select>
+                            <br />
+                            <span class="helvetica4">
+                                Город
+                            </span>
+                            <select id="town" style="width:120px;height:30px; border-radius:15px" name="City"></select>
+                            <script src="~/Scripts/City_script.js"></script>
+                            <br />
+
+                            <span class="helvetica4">
+                                Привод
+                            </span>
+                            <select style="width:120px;height:30px; border-radius:15px" id="privod" name="privod">
+                                <option value=""></option>
+                                <option value="Задний">Задний</option>
+                                <option value="Передний">Передний</option>
+                                <option value="Полный">Полный</option>
+                            </select>
+
+                            <br />
+
+                            <span class="helvetica4">
+                                Цвет
+                            </span>
+                            <select style="width:120px;height:30px; border-radius:15px" id="car_color" name="car_color">
+                                <option value=""></option>
+                                <option value="Черный">Черный</option>
+                                <option value="Синий металик">Синий металик</option>
+                                <option value="Белый">Белый</option>
+                                <option value="Желтый">Желтый</option>
+                                <option value="Зеленый">Зеленый</option>
+                                <option value="Красный">Красный</option>
+                            </select>
+
+                            <br />
+                            <span class="helvetica4">Пробег от</span>
+                            <select style="width:90px;height:30px; border-radius:15px" id="distance_min" name="distance_min">
+                                <option value=""></option>
+                                <option value="<20000">менее 20000</option>
+                                <option value="50000">50000</option>
+                                <option value="100000">100000</option>
+                                <option value="200000">200000</option>
+
+                            </select>
+
+                            <span class="helvetica4" style="margin-left: 91px;">до</span>
+                            <select style="width:90px;height:30px; border-radius:15px" id="distance_max" name="distance_max">
+                                <option value=""></option>
+                                <option value="50000">50000</option>
+                                <option value="100000">100000</option>
+                                <option value="200000">200000</option>
+                                <option value="более 200000">более 200000</option>
+                            </select>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+        <input type="submit" class="btn btn-success btn-large" style="margin-left:900px; margin-top:-23px;" value="Подобрать" />
+    
+</form>
+
+            
+        
+    <div class="container">
+        <div class="row">
+            <div class="well">
+                <h2 class="text-center">Топ-просмотр</h2>
+                <div class="list-group">
+                    <a href="#" class="list-group-item">
+                        <div class="media col-md-3">
+                            <figure class="pull-left">
+                                <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x250" alt="placehold.it/350x250">
+                            </figure>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="list-group-item-heading"> Описание </h4>
+                            <p class="list-group-item-text">
+                                Qui diam libris ei, vidisse incorrupte at mel. His euismod salutandi dissentiunt eu. Habeo offendit ea mea. Nostro blandit sea ea, viris timeam molestiae an has. At nisl platonem eum.
+                                
+                            </p>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <h2> 14240 <small> Просмотров </small></h2>
+                            <input type="button" class="btn btn-default btn-lg btn-block"> 
+                            <div class="stars">
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star-empty"></span>
+                            </div>
+                        </div>
+                    </a>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
