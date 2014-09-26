@@ -15,7 +15,7 @@ namespace CarsShop.Controllers
         }
 
         [HttpPost]
-        public void SearchResults(Car t)
+        public void SearchResults(MainParametrsCar t)
         {
 
         }

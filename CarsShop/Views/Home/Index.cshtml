@@ -1,4 +1,4 @@
-﻿@model CarsShop.Models.Car
+﻿@model CarsShop.Models.MainParametrsCar
 @{
     ViewBag.Title = "Home Page";
 }
@@ -14,7 +14,7 @@
                 <span class="helvetica4">
                     Марка
                 </span>
-                <select style="width:120px;height:30px; border-radius:15px" id="mark" name="Mark">
+                <select style="width:120px;height:30px; border-radius:15px" id="Mark" name="Mark">
                     <option value="" selected></option>
                     <option value="Audi">Audi</option>
                     <option value="BMW">BMW</option>
@@ -36,7 +36,7 @@
                 <span class="helvetica4">
                     Модель
                 </span>
-                <select style="width:120px;height:30px; border-radius:15px" id="series" name="Series"></select>
+                <select style="width:120px;height:30px; border-radius:15px" id="Series" name="Series"></select>
 
 
 
@@ -44,12 +44,12 @@
                 <span class="helvetica4">
                     Тип кузова
                 </span>
-                <select style="width:120px;height:30px; border-radius:15px" id="model" name="Model">
+                <select style="width:120px;height:30px; border-radius:15px" id="BodyType" name="BodyType">
                     <option value=""></option>
                     @*<option value="Купэ" class="Series-3 Series-6 A5">Купэ</option>
-                        <option value="Кабриолет" class="Series-3 Series-6 A3 A5">Кабриолет</option>
-                        <option value="Седан" class="Series-3 Series-5 A3 A4">Седан</option>
-                        <option value="Спортбэк" class="A3 A5">Спортбэк</option>*@
+            <option value="Кабриолет" class="Series-3 Series-6 A3 A5">Кабриолет</option>
+            <option value="Седан" class="Series-3 Series-5 A3 A4">Седан</option>
+            <option value="Спортбэк" class="A3 A5">Спортбэк</option>*@
                 </select>
 
                 <br />
@@ -59,7 +59,7 @@
                 <span class="helvetica4">
                     Тип топлива
                 </span>
-                <select style="width:100px;height:30px; border-radius:15px" id="toplivo" name="toplivo">
+                <select style="width:100px;height:30px; border-radius:15px" id="FuelType" name="FuelType">
                     <option value=""></option>
                     <option value="газ">Газ</option>
                     <option value="бензин">Бензин</option>
@@ -71,7 +71,7 @@
                 <span class="helvetica4">
                     Трансмиссия
                 </span>
-                <select style="width:120px;height:30px; border-radius:15px" id="transmission" name="transmission">
+                <select style="width:120px;height:30px; border-radius:15px" id="Transmission" name="Transmission">
                     <option value=""></option>
                     <option value="Автоматическая">Автоматическая</option>
                     <option value="Механическая">Механическая</option>
@@ -95,7 +95,6 @@
                 <span class="helvetica4" style="margin-left:91px;">до</span>
                 <select style="width:70px;height:30px; border-radius:15px" id="price_max" name="price_max">
                     <option value=""></option>
-
                     <option value="15000">15000</option>
                     <option value="20000">20000</option>
                     <option value="25000">25000</option>
@@ -165,49 +164,84 @@
                             <div class="col-md-6">
 
                                 <div class="form-group">
-                                    <div class="col-md-offset-2 col-md-10">
+                                    <div class="col-md-10">
                                         <div class="checkbox">
-                                            @Html.CheckBoxFor(m => m.RememberMe)
-                                            @Html.LabelFor(m => m.RememberMe)
+                                            @Html.CheckBoxFor(m => m.Conditioner)
+                                            @Html.LabelFor(m => m.Conditioner)
+
                                         </div>
                                     </div>
                                 </div>
                                 <br />
-                                <div class="checkbox helvetica4">
-                                    <p>
-                                        <input type="checkbox" />Кожаный салон
-                                    </p>
+                                <div class="form-group">
+                                    <div class="col-md-10">
+                                        <div class="checkbox">
+                                            @Html.CheckBoxFor(m => m.LeatherSeats)
+                                            @Html.LabelFor(m => m.LeatherSeats)
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="checkbox helvetica4">
-                                    <p>
-                                        <input type="checkbox" />Подогрев сидений
-                                    </p>
+                                <br />
+                                <div class="form-group">
+                                    <div class="col-md-10">
+                                        <div class="checkbox">
+                                            @Html.CheckBoxFor(m => m.HeatedSeats)
+                                            @Html.LabelFor(m => m.HeatedSeats)
+
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="checkbox helvetica4" />
-                                <p>
-                                    <input type="checkbox">Парктроник
-                                </p>
-                            </div>
-                            <div class="checkbox helvetica4">
-                                <p>
-                                    <input type="checkbox">Ксенон
-                                </p>
-                            </div>
-                            <div class="checkbox helvetica4">
-                                <p>
-                                    <input type="checkbox">Громкая связь
-                                </p>
-                            </div>
-                            <div class="checkbox helvetica4">
-                                <p>
-                                    <input type="checkbox">Легкосплавленные диски
-                                </p>
-                            </div>
-                            <div class="checkbox helvetica4">
-                                <p>
-                                    <input type="checkbox">Система контроля стабилизации
-                                </p>
-                            </div>
+                                <br />
+                                <div class="form-group">
+                                    <div class="col-md-10">
+                                        <div class="checkbox">
+                                            @Html.CheckBoxFor(m => m.Parktronic)
+                                            @Html.LabelFor(m => m.Parktronic)
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="form-group">
+                                    <div class="col-md-10">
+                                        <div class="checkbox">
+                                            @Html.CheckBoxFor(m => m.Ksenon)
+                                            @Html.LabelFor(m => m.Ksenon)
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="form-group">
+                                    <div class="col-md-10">
+                                        <div class="checkbox">
+                                            @Html.CheckBoxFor(m => m.Speakerphone)
+                                            @Html.LabelFor(m => m.Speakerphone)
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="form-group">
+                                    <div class="col-md-10">
+                                        <div class="checkbox">
+                                            @Html.CheckBoxFor(m => m.LegkosplavlennyeWheels)
+                                            @Html.LabelFor(m => m.LegkosplavlennyeWheels)
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="form-group">
+                                    <div class="col-md-10">
+                                        <div class="checkbox">
+                                            @Html.CheckBoxFor(m => m.ESP)
+                                            @Html.LabelFor(m => m.ESP)
+
+                                        </div>
+                                    </div>
+                                </div>
+                                
                         </div>
                         <div class="col-md-6">
                             <span class="helvetica4">
@@ -233,7 +267,7 @@
                             <span class="helvetica4">
                                 Привод
                             </span>
-                            <select style="width:120px;height:30px; border-radius:15px" id="privod" name="privod">
+                            <select style="width:120px;height:30px; border-radius:15px" id="Drive" name="Drive">
                                 <option value=""></option>
                                 <option value="Задний">Задний</option>
                                 <option value="Передний">Передний</option>
@@ -245,7 +279,7 @@
                             <span class="helvetica4">
                                 Цвет
                             </span>
-                            <select style="width:120px;height:30px; border-radius:15px" id="car_color" name="car_color">
+                            <select style="width:120px;height:30px; border-radius:15px" id="Color" name="Color">
                                 <option value=""></option>
                                 <option value="Черный">Черный</option>
                                 <option value="Синий металик">Синий металик</option>
