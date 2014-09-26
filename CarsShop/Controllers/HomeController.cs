@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using CarsShop.Models;
 
 namespace CarsShop.Controllers
 {
@@ -13,11 +14,11 @@ namespace CarsShop.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //public ActionResult Resultselection()
-        //{
-        //    return View();
-        //}
+        [HttpPost]
+        public void SearchResults(Car t)
+        {
+
+        }
 
         public ActionResult About()
         {
@@ -36,5 +37,6 @@ namespace CarsShop.Controllers
         {
             return View();
         }
+
     }
 }

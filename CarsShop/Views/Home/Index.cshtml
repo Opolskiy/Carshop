@@ -3,9 +3,7 @@
     ViewBag.Title = "Home Page";
 }
 
-
-
-<form action="/test">
+<form action="/Home/SearchResults" method="post">
     <div class="jumbotron" style="margin-top: inherit; margin-left:-1px; width:1170px;">
         <h2 style="font-size:36px; text-align: center;"><b>Поиск транспорта</b></h2>
         <p class="lead" style="text-align:center">Выбирите параметры посика автомобиля</p>
@@ -148,6 +146,7 @@
 
             </div>
         </div>
+        <script src="~/Scripts/Checkboxscript.js"></script>
         <div class="panel-group" id="accordion" style="margin-top:17px">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -164,12 +163,16 @@
                     <div class="panel-body" style="background-color:beige">
                         <div class="row " style="margin-left:20px">
                             <div class="col-md-6">
-                                <div class="checkbox helvetica4">
-                                    <p>
-                                        <input type="checkbox" checked="checked" id="Conditioner" name="Conditioner" />Кондиционер
 
-                                    </p>
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <div class="checkbox">
+                                            @Html.CheckBoxFor(m => m.RememberMe)
+                                            @Html.LabelFor(m => m.RememberMe)
+                                        </div>
+                                    </div>
                                 </div>
+                                <br />
                                 <div class="checkbox helvetica4">
                                     <p>
                                         <input type="checkbox" />Кожаный салон
@@ -279,8 +282,8 @@
             </div>
         </div>
     </div>
-        <input type="submit" class="btn btn-success btn-large" style="margin-left:900px; margin-top:-23px;" value="Подобрать" />
-    
+    <input type="submit" class="btn btn-success btn-large" style="margin-left:900px; margin-top:-23px;" value="Подобрать" />
+
 </form>
 
             

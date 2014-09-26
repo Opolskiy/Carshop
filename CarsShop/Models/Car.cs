@@ -15,9 +15,9 @@ namespace CarsShop.Models
        public string Model { get; set; }
        public string Country { get; set; }
        public string City { get; set; }
-       
-       [Display(Name = "Conditioner")]
-       public bool Conditioner { get; set; }
+
+       [Display(Name = "Запомнить меня")]
+       public bool RememberMe { get; set; }
        
    
     }
