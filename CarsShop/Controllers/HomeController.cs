@@ -15,9 +15,14 @@ namespace CarsShop.Controllers
         }
 
         [HttpPost]
-        public void SearchResults(MainParametrsCar t)
+        public ActionResult SearchResults(MainParametrsCar t)
         {
+            return RedirectToAction("SearchResult");
+        }
 
+        public ActionResult NewDeclaration()
+        {
+            return View();
         }
 
         public ActionResult About()
@@ -33,10 +38,11 @@ namespace CarsShop.Controllers
 
             return View();
         }
-        public ActionResult NewDeclaration() 
+        
+        public ActionResult SearchResult()
         {
+
             return View();
         }
-
     }
 }

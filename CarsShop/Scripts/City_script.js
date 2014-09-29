@@ -68,4 +68,3 @@ function gid(txt) {
     return document.getElementById(txt);
 
 }
-
