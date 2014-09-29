@@ -1,5 +1,4 @@
-﻿
-function ClearSearchForm() {
+﻿function ClearSearchForm() {
     $('#Mark').val("");
     $('#Series').val("");
     $('#BodyType').val("");
@@ -7,13 +6,13 @@ function ClearSearchForm() {
     $('#Transmission').val("");
     $('#price_min').val("");
     $('#price_max').val("");
-
     $('#age_min').val("");
     $('#age_max').val("");
     $('#country').val("");
     $('#town').val("");
-    $('#Mark').val("");
-    $('#Mark').val("");
-    $('#Mark').val("");
-    $('#Mark').val("");
+    $('#Drive').val("");
+    $('#Color').val("");
+    $('#distance_min').val("");
+    $('#distance_max').val("");
+    $("input:checkbox").removeAttr("checked");
 }
