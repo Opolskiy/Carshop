@@ -14,7 +14,7 @@
                 <span class="helvetica4">
                     Марка
                 </span>
-                <select style="width:120px;height:30px; border-radius:15px" id="Mark" name="Mark">
+                <select style="width: 120px; height: 30px; margin-left: 42px;border-radius:15px" id="Mark" name="Mark">
                     <option value="" selected></option>
                     <option value="Audi">Audi</option>
                     <option value="BMW">BMW</option>
@@ -36,10 +36,7 @@
                 <span class="helvetica4">
                     Модель
                 </span>
-                <select style="width:120px;height:30px; border-radius:15px" id="Series" name="Series"></select>
-
-
-
+                <select style="width: 120px; height: 30px; margin-left: 28px; border-radius: 15px" id="Series" name="Series"></select>
                 <br />
                 <span class="helvetica4">
                     Тип кузова
@@ -60,7 +57,7 @@
                 <span class="helvetica4">
                     Тип топлива
                 </span>
-                <select style="width:100px;height:30px; border-radius:15px" id="FuelType" name="FuelType">
+                <select style="width: 100px; height: 30px; margin-left: 14px; border-radius: 15px" id="FuelType" name="FuelType">
                     <option value=""></option>
                     <option value="газ">Газ</option>
                     <option value="бензин">Бензин</option>
@@ -83,7 +80,7 @@
 
             <div class="col-md-5">
                 <span class="helvetica4">Цена от</span>
-                <select style="width:70px;height:30px; border-radius:15px" id="price_min" name="price_min">
+                <select style="width: 70px; height: 30px; margin-left: 55px; border-radius:15px" id="price_min" name="price_min">
                     <option value=""></option>
                     <option value="менее 10000">менее 10000</option>
                     <option value="15000">15000</option>
@@ -143,7 +140,7 @@
                     <option value="2014">2014</option>
                 </select>
                 <br />
-                
+
             </div>
         </div>
         <script src="~/Scripts/Checkboxscript.js"></script>
@@ -248,8 +245,8 @@
                                 <span class="helvetica4">
                                     Страна
                                 </span>
-                                <select id="country" style="width:120px;height:30px; border-radius:15px" name="Country">
-                                    <option value="null" selected></option>
+                                <select id="country" style="width: 120px; height: 30px; margin-left: 18px; border-radius: 15px" name="Country">
+                                    <option value="" selected></option>
                                     <option value="Беларусь">Беларусь</option>
                                     <option value="Германия">Германия</option>
                                     <option value="Россия">Россия</option>
@@ -261,14 +258,14 @@
                                 <span class="helvetica4">
                                     Город
                                 </span>
-                                <select id="town" style="width:120px;height:30px; border-radius:15px" name="City"></select>
+                                <select id="town" style="width: 120px; height: 30px; margin-left: 32px; border-radius: 15px" name="City"></select>
                                 <script src="~/Scripts/City_script.js"></script>
                                 <br />
 
                                 <span class="helvetica4">
                                     Привод
                                 </span>
-                                <select style="width:120px;height:30px; border-radius:15px" id="Drive" name="Drive">
+                                <select style="width: 120px; height: 30px; margin-left: 18px; border-radius: 15px" id="Drive" name="Drive">
                                     <option value=""></option>
                                     <option value="Задний">Задний</option>
                                     <option value="Передний">Передний</option>
@@ -280,7 +277,7 @@
                                 <span class="helvetica4">
                                     Цвет
                                 </span>
-                                <select style="width:120px;height:30px; border-radius:15px" id="Color" name="Color">
+                                <select style="width: 120px; height: 30px; margin-left: 44px; border-radius: 15px" id="Color" name="Color">
                                     <option value=""></option>
                                     <option value="Черный">Черный</option>
                                     <option value="Синий металик">Синий металик</option>
@@ -292,7 +289,7 @@
 
                                 <br />
                                 <span class="helvetica4">Пробег от</span>
-                                <select style="width:90px;height:30px; border-radius:15px" id="distance_min" name="distance_min">
+                                <select style="width: 90px; height: 30px; margin-left: 17px; border-radius: 15px" id="distance_min" name="distance_min">
                                     <option value=""></option>
                                     <option value="<20000">менее 20000</option>
                                     <option value="50000">50000</option>
@@ -320,43 +317,42 @@
     <script src="~/Scripts/ClearFormSearch.js"></script>
     <div class="btn btn-default" onclick="ClearSearchForm();" style="margin-left:748px">Очистить форму</div>
     <input type="submit" class="btn btn-success btn-large" style="margin-left:900px; margin-top:-57px;" value="Подобрать" />
-   
+
 </form>
 
-            
-        
-    <div class="container">
-        <div class="row">
-            <div class="well">
-                <h2 class="text-center">Топ-просмотр</h2>
-                <div class="list-group">
-                    <a href="#" class="list-group-item">
-                        <div class="media col-md-3">
-                            <figure class="pull-left">
-                                <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x250" alt="placehold.it/350x250">
-                            </figure>
+
+
+<div class="container">
+    <div class="row">
+        <div class="well">
+            <h2 class="text-center">Топ-просмотр</h2>
+            <div class="list-group">
+                <a href="#" class="list-group-item">
+                    <div class="media col-md-3">
+                        <figure class="pull-left">
+                            <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x250" alt="placehold.it/350x250">
+                        </figure>
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="list-group-item-heading"> Описание </h4>
+                        <p class="list-group-item-text">
+                            Qui diam libris ei, vidisse incorrupte at mel. His euismod salutandi dissentiunt eu. Habeo offendit ea mea. Nostro blandit sea ea, viris timeam molestiae an has. At nisl platonem eum.
+
+                        </p>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <h2> 14240 <small> Просмотров </small></h2>
+                        <input type="button" class="btn btn-default btn-lg btn-block">
+                        <div class="stars">
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
                         </div>
-                        <div class="col-md-6">
-                            <h4 class="list-group-item-heading"> Описание </h4>
-                            <p class="list-group-item-text">
-                                Qui diam libris ei, vidisse incorrupte at mel. His euismod salutandi dissentiunt eu. Habeo offendit ea mea. Nostro blandit sea ea, viris timeam molestiae an has. At nisl platonem eum.
-                                
-                            </p>
-                        </div>
-                        <div class="col-md-3 text-center">
-                            <h2> 14240 <small> Просмотров </small></h2>
-                            <input type="button" class="btn btn-default btn-lg btn-block"> 
-                            <div class="stars">
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star-empty"></span>
-                            </div>
-                        </div>
-                    </a>
-                   
-                </div>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
+</div>
