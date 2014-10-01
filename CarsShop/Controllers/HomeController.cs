@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Mvc.Html;
 using CarsShop.Models;
 
 namespace CarsShop.Controllers
@@ -15,11 +16,12 @@ namespace CarsShop.Controllers
         }
 
         [HttpPost]
-        public ActionResult SearchResults(MainParametrsCar t)
+        public ActionResult SearchResults(SearchObject t)
         {
             return RedirectToAction("SearchResult");
         }
 
+        [Authorize]
         public ActionResult NewDeclaration()
         {
             return View();
@@ -28,7 +30,6 @@ namespace CarsShop.Controllers
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
-
             return View();
         }
 

@@ -165,8 +165,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Car.cs" />
     <Compile Include="Models\MainParametrsCar.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\SearchObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
