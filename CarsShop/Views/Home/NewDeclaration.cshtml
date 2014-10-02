@@ -1,97 +1,112 @@
-﻿@{
-    ViewBag.Title = "View1";
+﻿@model CarsShop.Models.Car
+
+@{
+    ViewBag.Title = "NewDeclaration";
 }
 
-<h2>View1</h2>
-
-<span class="helvetica4">
-    Страна
-</span>
-<select id="country" style="width:120px;height:30px; border-radius:15px" name="Country">
-    <option value="null" selected></option>
-    <option value="Беларусь">Беларусь</option>
-    <option value="Германия">Германия</option>
-    <option value="Россия">Россия</option>
-    <option value="Польша">Польша</option>
-    <option value="Литва">Литва</option>
-    <option value="Украина">Украина</option>
-</select>
-<br/>
-<span class="helvetica4">
-    Город
-</span>
-<select id="town" style="width:120px;height:30px; border-radius:15px" name="City"></select>
-
-<script>
-
-    var dataObject = {
-        "null" :"",
-
-        "Беларусь": ",Минск,Брест,Могилев,Гродно,Гомель,Витебск",
-
-        "Германия": ",Берлин,Вольфсбург,Мюнхен,Гамбург",
-
-        "Россия": ",Москва,Санкт-Питербург,Смоленск,Тольяти",
-
-        "Польша": ",Варшава,Бяла-Подляска",
-
-        "Литва": ",Вильнюс,Каунас",
-
-        "Украина": ",Львов,Киев"
-
-    };
-
-    makeRelation = (function () {
-
-        function change(slave, data) {
-
-            var x, dataArray, option;
-
-            slave.innerHTML = "";
-
-            if (!(this.value in data)) {
-
-                return false;
-
-            }
-
-            dataArray = data[this.value].split(",");
-
-            for (x = 0; x < dataArray.length; x++) {
-
-                option = document.createElement("option");
-
-                option.value = String(x);
-
-                option.innerHTML = dataArray[x];
-
-                slave.appendChild(option);
-
-            }
-
-        }
-
-        return function (master, slave, data) {
-
-            master.onchange = function () {
-
-                change.call(this, slave, data);
-
-            }
-
-            master.onchange();
-
-        }
-
-    })();
-
-    makeRelation(gid("country"), gid("town"), dataObject); // Использование
-
-    function gid(txt) {
-
-        return document.getElementById(txt);
-
-    }
-
-</script>
-
+<h2 style="text-align:center">Добавьте ваши данные</h2>
+<br />
+<div class="row">
+    <div class="col-md-7">
+        <div class="form-group">
+            @Html.LabelFor(m => m.Mark, new { @class = "col-md-3 control-label helvetica4", @style = "font-weight: normal" })
+            <div class="col-md-5">
+                @Html.TextBoxFor(m => m.Mark, new { @class = "form-control", @style = "border-radius:10px;" })
+                @Html.ValidationMessageFor(m => m.Mark)
+            </div>
+            <br />
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(m => m.Series, new { @class = "col-md-3 control-label helvetica4", @style = "font-weight: normal" })
+            <div class="col-md-5">
+                @Html.TextBoxFor(m => m.Series, new { @class = "form-control", @style = "border-radius:10px;" })
+                @Html.ValidationMessageFor(m => m.Series)  
+            </div>
+            <br />
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(m => m.BodyType, new { @class = "col-md-3 control-label helvetica4", @style = "font-weight: normal" })
+            <div class="col-md-5">
+                @Html.TextBoxFor(m => m.BodyType, new { @class = "form-control", @style = "border-radius:10px;" })
+                @Html.ValidationMessageFor(m => m.BodyType)
+            </div>
+            <br />
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(m => m.FuelType, new { @class = "col-md-3 control-label helvetica4", @style = "font-weight: normal" })
+            <div class="col-md-5">
+                @Html.TextBoxFor(m => m.FuelType, new { @class = "form-control", @style = "border-radius:10px;" })
+                @Html.ValidationMessageFor(m => m.FuelType)   
+            </div>
+            <br />
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(m => m.Country, new { @class = "col-md-3 control-label helvetica4", @style = "font-weight: normal" })
+            <div class="col-md-5">
+                @Html.TextBoxFor(m => m.Country, new { @class = "form-control", @style = "border-radius:10px;" })
+                @Html.ValidationMessageFor(m => m.Country)
+            </div>
+            <br />
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(m => m.City, new { @class = "col-md-3 control-label helvetica4", @style = "font-weight: normal" })
+            <div class="col-md-5">
+                @Html.TextBoxFor(m => m.City, new { @class = "form-control", @style = "border-radius:10px;" })
+                @Html.ValidationMessageFor(m => m.City)
+            </div>
+            <br />
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(m => m.Transmission, new { @class = "col-md-3 control-label helvetica4", @style = "font-weight: normal" })
+            <div class="col-md-5">
+                @Html.TextBoxFor(m => m.Transmission, new { @class = "form-control", @style = "border-radius:10px;" })
+                @Html.ValidationMessageFor(m => m.Transmission)
+            </div>
+            <br />
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(m => m.Drive, new { @class = "col-md-3 control-label helvetica4", @style = "font-weight: normal" })
+            <div class="col-md-5">
+                @Html.TextBoxFor(m => m.Drive, new { @class = "form-control", @style = "border-radius:10px;" })
+                @Html.ValidationMessageFor(m => m.Drive)
+            </div>
+            <br />
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(m => m.Color, new { @class = "col-md-3 control-label helvetica4", @style = "font-weight: normal" })
+            <div class="col-md-5">
+                @Html.TextBoxFor(m => m.Color, new { @class = "form-control", @style = "border-radius:10px;" })
+                @Html.ValidationMessageFor(m => m.Color)
+            </div>
+            <br />
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(m => m.Price, new { @class = "col-md-3 control-label helvetica4", @style = "font-weight: normal" })
+            <div class="col-md-5">
+                @Html.TextBoxFor(m => m.Year, new { @class = "form-control", @style = "border-radius:10px;" })
+                @Html.ValidationMessageFor(m => m.Year)
+            </div>
+            <br />
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(m => m.Distance, new { @class = "col-md-3 control-label helvetica4", @style = "font-weight: normal" })
+            <div class="col-md-5">
+                @Html.TextBoxFor(m => m.Distance, new { @class = "form-control", @style = "border-radius:10px;" })
+                @Html.ValidationMessageFor(m => m.Distance)
+            </div>
+            <br />
+        </div>
+    </div>
+    <div class="col-md-5">
+        </div>
+    </div>
