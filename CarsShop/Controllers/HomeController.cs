@@ -15,11 +15,7 @@ namespace CarsShop.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult SearchResults(SearchObject t)
-        {
-            return RedirectToAction("SearchResult");
-        }
+        
 
         [Authorize]
         public ActionResult NewDeclaration()
@@ -40,10 +36,6 @@ namespace CarsShop.Controllers
             return View();
         }
         
-        public ActionResult SearchResult()
-        {
-
-            return View();
-        }
+        
     }
 }
