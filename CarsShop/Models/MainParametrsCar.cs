@@ -23,7 +23,6 @@ namespace CarsShop.Models
        [Display(Name = "Кондиционер")]
        public virtual bool Conditioner { get; set; }
 
-
        [Display(Name = "Кожаный салон")]
        public virtual bool LeatherSeats { get; set; }
 

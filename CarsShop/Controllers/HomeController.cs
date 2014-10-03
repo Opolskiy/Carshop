@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using CarsShop.Models;
+using System.IO;
 
 namespace CarsShop.Controllers
 {
@@ -15,12 +16,24 @@ namespace CarsShop.Controllers
             return View();
         }
 
-        
-
         [Authorize]
         public ActionResult NewDeclaration()
         {
             return View();
+        }
+        
+        [HttpPost]
+        public ActionResult NewDeclaration(IEnumerable<HttpPostedFileBase> fileUpload)
+        {
+            foreach (var file in fileUpload)
+            {
+                if (file == null) break;
+                string path = AppDomain.CurrentDomain.BaseDirectory + "UploadedFiles/";
+                string filename = Path.GetFileName(file.FileName);
+                if (filename != null) file.SaveAs(Path.Combine(path, filename));
+            }
+
+            return RedirectToAction("NewDeclaration");
         }
 
         public ActionResult About()

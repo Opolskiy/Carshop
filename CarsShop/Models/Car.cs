@@ -55,37 +55,5 @@ namespace CarsShop.Models
         [Required(ErrorMessage = "Поле обязательно для заполнения")]
         [Display(Name = "Пробег")]
         public int Distance { get; set; }
-
-        [Required(ErrorMessage = "Поле обязательно для заполнения")]
-        [Display(Name = "Кондиционер")]
-        public override bool Conditioner { get; set; }
-
-        [Required(ErrorMessage = "Поле обязательно для заполнения")]
-        [Display(Name = "Кожаный салон")]
-        public override bool LeatherSeats { get; set; }
-
-        [Required(ErrorMessage = "Поле обязательно для заполнения")]
-        [Display(Name = "Подогрев сидений")]
-        public override bool HeatedSeats { get; set; }
-
-        [Required(ErrorMessage = "Поле обязательно для заполнения")]
-        [Display(Name = "Парктроник")]
-        public override bool Parktronic { get; set; }
-
-        [Required(ErrorMessage = "Поле обязательно для заполнения")]
-        [Display(Name = "Ксенон")]
-        public override bool Ksenon { get; set; }
-
-        [Required(ErrorMessage = "Поле обязательно для заполнения")]
-        [Display(Name = "Громкая связь")]
-        public override bool Speakerphone { get; set; }
-
-        [Required(ErrorMessage = "Поле обязательно для заполнения")]
-        [Display(Name = "Легкосплавленные диски")]
-        public override bool LegkosplavlennyeWheels { get; set; }
-
-        [Required(ErrorMessage = "Поле обязательно для заполнения")]
-        [Display(Name = "Система контроля стабилизации")]
-        public override bool ESP { get; set; }
     }
 }
