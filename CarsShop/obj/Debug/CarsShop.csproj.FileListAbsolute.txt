@@ -80,3 +80,4 @@ D:\Универ\vs\CarShop\1\carshop\CarsShop\bin\Newtonsoft.Json.dll
 D:\Универ\vs\CarShop\1\carshop\CarsShop\bin\Microsoft.Web.Infrastructure.xml
 D:\Универ\vs\CarShop\1\carshop\CarsShop\obj\Debug\CarsShop.dll
 D:\Универ\vs\CarShop\1\carshop\CarsShop\obj\Debug\CarsShop.pdb
+D:\Универ\vs\CarShop\1\carshop\CarsShop\obj\Debug\CarsShop.csprojResolveAssemblyReference.cache
