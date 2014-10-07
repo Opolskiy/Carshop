@@ -165,10 +165,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201410071952335_a.cs" />
+    <Compile Include="Migrations\201410071952335_a.Designer.cs">
+      <DependentUpon>201410071952335_a.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Car.cs" />
     <Compile Include="Models\MainParametrsCar.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Picture.cs" />
     <Compile Include="Models\SearchObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -242,10 +248,14 @@
     <Content Include="Views\UserActions\MyDeclarations.cshtml" />
     <Content Include="Views\UserActions\CompareDeclarations.cshtml" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201410071952335_a.resx">
+      <DependentUpon>201410071952335_a.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

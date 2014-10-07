@@ -4,12 +4,15 @@
     ViewBag.Title = "NewDeclaration";
 }
 
-<form action="/Home/AddNewDeclaration" method="post">
-    @Html.AntiForgeryToken()
+@*<form action="/Home/AddNewDeclaration" method="post">*@
+    @using (Html.BeginForm("AddNewDeclaration", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        
+    
     <h2 style="text-align:center">Добавьте ваши данные</h2>
     <br />
     <div class="row">
-        @Html.ValidationSummary(true)
+        
         <div class="col-md-7">
             <div class="form-group">
                 @Html.LabelFor(m => m.Mark, new { @class = "col-md-3 control-label helvetica4", @style = "font-weight: normal" })
@@ -111,25 +114,25 @@
             </div>
         </div>
         <div class="col-md-5">
-            @*<h2>Загрузка одного файла</h2>
-                <p>
-                    @using (Html.BeginForm("", "home", FormMethod.Post, new { enctype = "multipart/form-data" }))
-                    {
-                        <input type="file" name="fileUpload" /><br />
-                        <input type="submit" name="Submit" id="SubmitSingle" value="Upload" />
-                    }
-                </p>*@
-            @*<h2>Загрузка нескольких файлов</h2>
+           
+                    
+        @Html.ValidationSummary(true)
+        <fieldset>
+            <legend>Добавить изображение</legend>
+
+            <div class="editor-label">Название</div>
+
+
+            <div class="editor-label">Файл изображения</div>
+            <div class="editor-field">
+                <input type="file" name="fileUpload" />
+            </div>
+
             <p>
-                @using (Html.BeginForm("", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
-                {
-                    <input type="file" name="fileUpload[0]" id="lefile" /><br />
-                    <img id="preview" style="width:100px" />
-                    <input type="file" name="fileUpload[1]" /><br />
-                    <input type="file" name="fileUpload[2]" /><br />
-                    <input type="submit" name="Submit" id="SubmitMultiply" value="Upload" />
-                }
-            </p>*@
+                <input type="submit" value="Добавить" />
+            </p>
+        </fieldset>
+    
         </div>
     </div>
     <br />
@@ -227,9 +230,7 @@
     </div>
     <input type="submit" class="btn btn-success btn-large" style="margin-left:900px;" value="Добавить" />
 
-</form>
-
-
+    }
 
 
     @*<script type="text/javascript">

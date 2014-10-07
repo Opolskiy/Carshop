@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity;
 
 namespace CarsShop.Models
 {
@@ -13,5 +14,8 @@ namespace CarsShop.Models
             : base("DefaultConnection")
         {
         }
+
+        public DbSet<Car> Cars { get; set; }
+        public DbSet<Picture> Pictures { get; set; }
     }
 }

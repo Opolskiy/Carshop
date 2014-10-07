@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.ComponentModel.DataAnnotations;
 
 namespace CarsShop.Models
@@ -55,5 +53,33 @@ namespace CarsShop.Models
         [Required(ErrorMessage = "Поле обязательно для заполнения")]
         [Display(Name = "Пробег")]
         public int Distance { get; set; }
-    }
+
+        
+
+        public string Author { get; set; }
+        public int CountViews { get; set; }
+        public Guid CarId { get; set; }
+
+
+        public Car( string Author, string Mark, string Series, string BodyType,
+                    string FuelType, string Country, string City, 
+                    string Transmission, string Drive, string Color,
+                    int Price, int Year, int Distance)
+        {
+            this.Author = Author;
+            this.Mark = Mark;
+            this.Series = Series;
+            this.BodyType = BodyType;
+            this.FuelType = FuelType;
+            this.Country = Country;
+            this.City = City;
+            this.Drive = Drive;
+            this.Color = Color;
+            this.Price = Price;
+            this.Year = Year;
+            this.Distance = Distance;
+        }
+
+        public Car() { }
+    }   
 }

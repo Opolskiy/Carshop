@@ -90,3 +90,5 @@ E:\Carshop\carshop\carshop\CarsShop\bin\Microsoft.Web.Infrastructure.xml
 E:\Carshop\carshop\carshop\CarsShop\obj\Debug\CarsShop.csprojResolveAssemblyReference.cache
 E:\Carshop\carshop\carshop\CarsShop\obj\Debug\CarsShop.dll
 E:\Carshop\carshop\carshop\CarsShop\obj\Debug\CarsShop.pdb
+E:\Carshop\carshop\carshop\CarsShop\obj\Debug\CarsShop.Migrations.a.resources
+E:\Carshop\carshop\carshop\CarsShop\obj\Debug\CarsShop.csproj.GenerateResource.Cache
