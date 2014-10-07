@@ -23,17 +23,17 @@ namespace CarsShop.Controllers
         }
         
         [HttpPost]
-        public ActionResult NewDeclaration(IEnumerable<HttpPostedFileBase> fileUpload)
+        public ActionResult AddNewDeclaration(Car Newcar)
         {
-            foreach (var file in fileUpload)
-            {
-                if (file == null) break;
-                string path = AppDomain.CurrentDomain.BaseDirectory + "UploadedFiles/";
-                string filename = Path.GetFileName(file.FileName);
-                if (filename != null) file.SaveAs(Path.Combine(path, filename));
-            }
+            //foreach (var file in fileUpload)
+            //{
+            //    if (file == null) break;
+            //    string path = AppDomain.CurrentDomain.BaseDirectory + "UploadedFiles/";
+            //    string filename = Path.GetFileName(file.FileName);
+            //    if (filename != null) file.SaveAs(Path.Combine(path, filename));
+            //}
 
-            return RedirectToAction("NewDeclaration");
+            return RedirectToAction("Index");
         }
 
         public ActionResult About()

@@ -81,3 +81,12 @@ D:\Универ\vs\CarShop\1\carshop\CarsShop\bin\Microsoft.Web.Infrastructure.x
 D:\Универ\vs\CarShop\1\carshop\CarsShop\obj\Debug\CarsShop.dll
 D:\Универ\vs\CarShop\1\carshop\CarsShop\obj\Debug\CarsShop.pdb
 D:\Универ\vs\CarShop\1\carshop\CarsShop\obj\Debug\CarsShop.csprojResolveAssemblyReference.cache
+E:\Carshop\carshop\carshop\CarsShop\bin\CarsShop.dll.config
+E:\Carshop\carshop\carshop\CarsShop\bin\CarsShop.dll
+E:\Carshop\carshop\carshop\CarsShop\bin\CarsShop.pdb
+E:\Carshop\carshop\carshop\CarsShop\bin\Microsoft.Web.Infrastructure.dll
+E:\Carshop\carshop\carshop\CarsShop\bin\Newtonsoft.Json.dll
+E:\Carshop\carshop\carshop\CarsShop\bin\Microsoft.Web.Infrastructure.xml
+E:\Carshop\carshop\carshop\CarsShop\obj\Debug\CarsShop.csprojResolveAssemblyReference.cache
+E:\Carshop\carshop\carshop\CarsShop\obj\Debug\CarsShop.dll
+E:\Carshop\carshop\carshop\CarsShop\obj\Debug\CarsShop.pdb

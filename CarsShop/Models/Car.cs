@@ -8,7 +8,7 @@ namespace CarsShop.Models
 {
     public class Car : MainParametrsCar
     {
-        [Required(ErrorMessage = "Поле обязательно для заполнения")]
+        [Required]
         [Display(Name = "Марка")]
         public override string Mark { get; set; }
 
