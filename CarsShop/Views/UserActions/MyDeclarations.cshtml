@@ -1,6 +1,8 @@
-﻿
+﻿@using CarsShop.Models
+@model IList<Car>
 @{
     ViewBag.Title = "MyDeclarations";
+    
 }
 
 <h2 style="text-align:center">Мои объявления</h2>
@@ -9,53 +11,21 @@
     <thead>
         <tr>
             <th>#</th>
-            <th>Column heading</th>
-            <th>Column heading</th>
-            <th>Column heading</th>
+            <th>Владелец</th>
+            <th>Данные</th>
+            <th>Время добавления</th>
         </tr>
     </thead>
+    @for(int i = 0 ; i < Model.Count; i++)
+    { 
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-        </tr>
         <tr class="info">
-            <td>3</td>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
+            <td>@(i+1)</td>
+            <td>@Model[i].Author</td>
+            <td>@(Model[i].Mark +" "+ Model[i].Series +" "+Model[i].Year) </td>
+            <td>@Model[i].DateAdded</td>
         </tr>
-        <tr class="success">
-            <td>4</td>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-        </tr>
-        <tr class="danger">
-            <td>5</td>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-        </tr>
-        <tr class="warning">
-            <td>6</td>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-        </tr>
-        <tr class="active">
-            <td>7</td>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-        </tr>
+        
     </tbody>
+    }
 </table> 
