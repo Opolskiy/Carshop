@@ -54,8 +54,8 @@ namespace CarsShop.Models
         [Display(Name = "Пробег")]
         public int Distance { get; set; }
 
-        
 
+        public DateTime DateAdded { get; set; }
         public string Author { get; set; }
         public int CountViews { get; set; }
         public Guid CarId { get; set; }

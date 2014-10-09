@@ -43,6 +43,7 @@ namespace CarsShop.Controllers
                 {
                     CreateFile(HttpRuntime.AppDomainAppPath + "/Photo/" + pic.Id + ".jpg", img);
                 }
+                C.DateAdded = DateTime.Now;
                 C.CarId = Guid.NewGuid();
                 db.Cars.Add(C);
                 pic.PicId = C.CarId;
