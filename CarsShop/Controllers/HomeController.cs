@@ -33,24 +33,24 @@ namespace CarsShop.Controllers
             string NameUser = User.Identity.Name;
             //создаю объект car -> добавляю саr в список пользователя ->
             C.Author = NameUser;
+            C.DateAdded = DateTime.Now;
+            C.CarId = Guid.NewGuid();
+            db.Cars.Add(C);
             
-            //db.SaveChanges();
 
-            if (ModelState.IsValid && fileUpload != null)
+            if (fileUpload != null)
             {
 
                 using (var img = new Bitmap(fileUpload.InputStream))
                 {
                     CreateFile(HttpRuntime.AppDomainAppPath + "/Photo/" + pic.Id + ".jpg", img);
                 }
-                C.DateAdded = DateTime.Now;
-                C.CarId = Guid.NewGuid();
-                db.Cars.Add(C);
+               
                 pic.PicId = C.CarId;
                 db.Pictures.Add(pic);
-                db.SaveChanges();
+                
             }
-
+            db.SaveChanges();
             return RedirectToAction("Index");
         }
 
