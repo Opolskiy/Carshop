@@ -1,7 +1,16 @@
-﻿
+﻿@using CarsShop.Models
+@model IList<Car>
 @{
     ViewBag.Title = "SearchResult";
 }
 
 <h2>SearchResult</h2>
-
+@for (int i = 0 ; i < Model.Count ; i ++)
+{
+    <li>@Model[i].Mark</li>
+    <li>@Model[i].Country</li>
+    <li>@Model[i].City</li>
+    <li>@Model[i].Drive</li>
+    <li>@Model[i].FuelType</li>
+    <br/>
+} 

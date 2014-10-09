@@ -10,15 +10,17 @@ namespace CarsShop.Controllers
     public class SearchController : Controller
     {
         [HttpPost]
-        public ActionResult SearchResults(SearchObject data)
+        public ActionResult SearchResults(SearchObject Data)
         {
+            
             return RedirectToAction("SearchResult");
         }
 
-        public ActionResult SearchResult()
+        public ActionResult SearchResult(SearchObject Data)
         {
-
-            return View();
+            ApplicationDbContext Db = new ApplicationDbContext();
+            IList<Car> list = Db.Cars.Where(s => s.Mark == Data.Mark || Data.Mark == null).ToList();
+            return View(list);
         }
 	}
 }
