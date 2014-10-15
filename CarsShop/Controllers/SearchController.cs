@@ -19,7 +19,8 @@ namespace CarsShop.Controllers
         public ActionResult SearchResult(SearchObject Data)
         {
             ApplicationDbContext Db = new ApplicationDbContext();
-            IList<Car> list = Db.Cars.Where(s => s.Mark == Data.Mark || Data.Mark == null).ToList();
+            List<Car> list = Db.Cars.Where(s => (s.Mark == Data.Mark || Data.Mark == null) 
+                                              && (s.Country == Data.Country || Data.Country == null)).ToList();
             return View(list);
         }
 	}

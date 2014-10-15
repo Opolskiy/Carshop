@@ -1,11 +1,11 @@
 ﻿@using CarsShop.Models
-@model IList<Car>
+@model IEnumerable<Car>
 @{
     ViewBag.Title = "SearchResult";
 }
 
 <h2 style="text-align:center">Результаты поиска</h2>
-@for (int i = 0; i < Model.Count; i++)
+@foreach (var c in Model)
 {
     <div class="list-group">
         <a href="#" class="list-group-item">
@@ -16,13 +16,14 @@
             </div>
             <div class="col-md-6">
                 <h4 class="list-group-item-heading"> Описание </h4>
-                <p class="list-group-item-text">
-                   @(Model[i].Mark + " " + Model[i].Series + " " + Model[i].BodyType + " " + Model[i].Color + " " + "Цвет" + " " +
-                   Model[i].Drive + " " + "Привод" + " " + Model[i].FuelType + " " + Model[i].Transmission + " " + "Год выпуска" + Model[i].Year )
+                <p class="list-group-item-text" style="font-size : 20px">
+                   @(c.Mark + " " + c.Series + " " + c.BodyType + " " + c.Color + " " + "Цвет" + " " +
+                   c.Drive + " " + "Привод" + " " + c.FuelType + " " + c.Transmission + " " + "Год выпуска" + " " + c.Year
+                   + " " + c.Country + " " + c.City)
                 </p>
             </div>
             <div class="col-md-3 text-center">
-                <h2> @Model[i].CountViews <small> Просмотров </small></h2>
+                <h2> @c.CountViews <small> Просмотров </small></h2>
                 <input type="button" class="btn btn-default btn-lg btn-block">
                 <div class="stars">
                     <span class="glyphicon glyphicon-star"></span>

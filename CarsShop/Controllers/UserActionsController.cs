@@ -20,8 +20,8 @@ namespace CarsShop.Controllers
         public ActionResult MyDeclarations()
         {
             ApplicationDbContext Db = new ApplicationDbContext();
-            IList<Car> list = Db.Cars.Where(s => s.Author == User.Identity.Name).ToList();
-            (list as List<Car>).Sort(delegate(Car x, Car y) 
+            List<Car> list = Db.Cars.Where(s => s.Author == User.Identity.Name).ToList();
+            list.Sort(delegate(Car x, Car y) 
             {
                 if (x.DateAdded < y.DateAdded) return -1;
                 if (x.DateAdded > y.DateAdded) return 1;
