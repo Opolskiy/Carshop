@@ -1,46 +1,61 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Web;
 
 namespace CarsShop.Models
 {
+    public delegate void Dgate (Object sender, string e);
+
+    public class AddEvent
+    {
+        public event Dgate AddCar;
+        public void onAddEvent(string e)
+        {
+            if (AddCar != null)
+                AddCar(this, e);
+        }
+    }
+
     public class Car : MainParametrsCar
     {
+        
         [Required]
         [Display(Name = "Марка")]
-        public override string Mark { get; set; }
+        public string Mark { get; set; }
 
         [Required(ErrorMessage = "Поле обязательно для заполнения")]
         [Display(Name = "Модель")]
-        public override string Series { get; set; }
+        public string Series { get; set; }
 
         [Required(ErrorMessage = "Поле обязательно для заполнения")]
         [Display(Name = "Тип кузова")]
-        public override string BodyType { get; set; }
+        public string BodyType { get; set; }
 
         [Required(ErrorMessage = "Поле обязательно для заполнения")]
         [Display(Name = "Тип топлива")]
-        public override string FuelType { get; set; }
+        public string FuelType { get; set; }
 
         [Required(ErrorMessage = "Поле обязательно для заполнения")]
         [Display(Name = "Страна")]
-        public override string Country { get; set; }
+        public string Country { get; set; }
 
         [Required(ErrorMessage = "Поле обязательно для заполнения")]
         [Display(Name = "Город")]
-        public override string City { get; set; }
+        public string City { get; set; }
 
         [Required(ErrorMessage = "Поле обязательно для заполнения")]
         [Display(Name = "Трансмиссия")]
-        public override string Transmission { get; set; }
+        public string Transmission { get; set; }
 
         [Required(ErrorMessage = "Поле обязательно для заполнения")]
         [Display(Name = "Привод")]
-        public override string Drive { get; set; }
+        public string Drive { get; set; }
 
         [Required(ErrorMessage = "Поле обязательно для заполнения")]
         [Display(Name = "Цвет")]
-        public override string Color { get; set; }
+        public string Color { get; set; }
 
         [Required(ErrorMessage = "Поле обязательно для заполнения")]
         [Display(Name = "Стоимость")]
@@ -81,5 +96,18 @@ namespace CarsShop.Models
         }
 
         public Car() { }
+
+        private static object sync = new object();
+
+        public void WriteDeclaration(Object sender, String e)
+        {
+            lock (sync)
+            {
+                var file = new StreamWriter(HttpRuntime.AppDomainAppPath + "/Adds/" + e + ".txt", true);
+                file.WriteLine("{0:F}-{1}-{2}", DateTime.Now, Mark, Year);
+                file.Close();
+            }
+        }
+
     }   
 }

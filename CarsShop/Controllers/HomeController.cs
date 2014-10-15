@@ -30,13 +30,16 @@ namespace CarsShop.Controllers
         public ActionResult AddNewDeclaration(Car C, HttpPostedFileBase fileUpload, Picture pic)
         {
             ApplicationDbContext db = new ApplicationDbContext();
-            string NameUser = User.Identity.Name;
-            //создаю объект car -> добавляю саr в список пользователя ->
-            C.Author = NameUser;
-            C.DateAdded = DateTime.Now;
-            C.CarId = Guid.NewGuid();
-            db.Cars.Add(C);
-            
+            if (C != null)
+            {
+                
+                string NameUser = User.Identity.Name;
+
+                C.Author = NameUser;
+                C.DateAdded = DateTime.Now;
+                C.CarId = Guid.NewGuid();
+                db.Cars.Add(C);
+            }
 
             if (fileUpload != null)
             {
@@ -50,7 +53,13 @@ namespace CarsShop.Controllers
                 db.Pictures.Add(pic);
                 
             }
+
             db.SaveChanges();
+
+            AddEvent addEvent = new AddEvent();
+            addEvent.AddCar += C.WriteDeclaration;
+            addEvent.onAddEvent(User.Identity.Name);
+
             return RedirectToAction("Index");
         }
 

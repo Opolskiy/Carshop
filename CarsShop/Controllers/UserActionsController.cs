@@ -30,5 +30,12 @@ namespace CarsShop.Controllers
             );
             return View(list);
         }
+
+        public ActionResult DeleteDeclaration (Car Model)
+        {
+            ApplicationDbContext Db = new ApplicationDbContext();
+            Db.Cars.Remove(Model);
+            return RedirectToAction("MyDeclarations");
+        }
 	}
 }

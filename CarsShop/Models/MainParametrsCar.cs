@@ -10,15 +10,7 @@ namespace CarsShop.Models
 {
     public class MainParametrsCar
     {
-       public virtual string Mark { get; set; }
-       public virtual string Series { get; set; }
-       public virtual string BodyType { get; set; }
-       public virtual string FuelType { get; set; }
-       public virtual string Country { get; set; }
-       public virtual string City { get; set; }
-       public virtual string Transmission { get; set; }
-       public virtual string Drive { get; set; }
-       public virtual string Color { get; set; }
+       
 
        [Display(Name = "Кондиционер")]
        public virtual bool Conditioner { get; set; }

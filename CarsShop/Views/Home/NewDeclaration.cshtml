@@ -5,12 +5,13 @@
 }
 
 @*<form action="/Home/AddNewDeclaration" method="post">*@
+
 @using (Html.BeginForm("AddNewDeclaration", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-
-
+    @Html.AntiForgeryToken()
     <h2 style="text-align:center">Добавьте ваши данные</h2>
     <br />
+    @Html.ValidationSummary()
     <div class="row">
 
         <div class="col-md-7">
