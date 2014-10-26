@@ -6,10 +6,12 @@ using System.Web.Mvc;
 using System.ComponentModel.DataAnnotations;
 using CarsShop.Models;
 
+
 namespace CarsShop.Controllers
 {
     public class UserActionsController : Controller
     {
+       
         public ActionResult CompareDeclarations()
         {
             return View();
@@ -19,6 +21,7 @@ namespace CarsShop.Controllers
         
         public ActionResult MyDeclarations()
         {
+           
             ApplicationDbContext Db = new ApplicationDbContext();
             List<Car> list = Db.Cars.Where(s => s.Author == User.Identity.Name).ToList();
             list.Sort(delegate(Car x, Car y) 
@@ -30,6 +33,7 @@ namespace CarsShop.Controllers
             );
             return View(list);
         }
+        
 
         public ActionResult DeleteDeclaration (Car Model)
         {

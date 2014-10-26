@@ -8,12 +8,14 @@ using System.Drawing.Imaging;
 using System.Drawing;
 using CarsShop.Models;
 using System.IO;
+using System.Threading;
 
 namespace CarsShop.Controllers
 {
     public class HomeController : Controller
     {
-        
+        private static Mutex mutex = new Mutex();
+
         public ActionResult Index()
         {
             return View();
@@ -29,6 +31,7 @@ namespace CarsShop.Controllers
         [HttpPost]
         public ActionResult AddNewDeclaration(Car C, HttpPostedFileBase fileUpload, Picture pic)
         {
+            mutex.WaitOne();
             ApplicationDbContext db = new ApplicationDbContext();
             if (C != null)
             {
@@ -59,7 +62,7 @@ namespace CarsShop.Controllers
             AddEvent addEvent = new AddEvent();
             addEvent.AddCar += C.WriteDeclaration;
             addEvent.onAddEvent(User.Identity.Name);
-
+            mutex.ReleaseMutex();
             return RedirectToAction("Index");
         }
 
