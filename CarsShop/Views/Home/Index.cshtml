@@ -316,13 +316,18 @@
             </div>
         </div>
     </div>
-    <script src="~/Scripts/ClearFormSearch.js"></script>
-    <div class="btn btn-default" onclick="ClearSearchForm();" style="margin-left:748px">Очистить форму</div>
+    <script>
+    function ClearSearchForm() {
+        $('select').val("");
+        $("input:checkbox").removeAttr("checked");
+    }
+    </script>
+
+    <div class="btn btn-default" style="margin-left:748px"  id="clearbtn">Очистить форму</div>
     <input type="submit" class="btn btn-success btn-large" style="margin-left:900px; margin-top:-57px;" value="Подобрать" />
-
+    
+    @*onclick="ClearSearchForm();"*@
 </form>
-
-
 
 <div class="container">
     <div class="row">
@@ -358,3 +363,23 @@
         </div>
     </div>
 </div>
+
+
+
+@*<script>
+    $(document).ready(function () {
+        $('div#clearbtn').click(function () {
+            $('select').val("");
+            $("input:checkbox").removeAttr("checked");
+        });
+    });
+</script>*@
+
+<script>
+    function ClearSearchForm() {
+        $('select').val("");
+        $("input:checkbox").removeAttr("checked");
+    }
+    var but = document.getElementById('clearbtn');
+    but.addEventListener('click', ClearSearchForm, true);
+</script>
