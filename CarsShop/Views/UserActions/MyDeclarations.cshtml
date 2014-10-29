@@ -19,14 +19,23 @@
     @for(int i = 0 ; i < Model.Count; i++)
     { 
     <tbody>
-        <tr class="info">
+        <tr class="info" id="@("entry" + Model[i].CarId)">
             <td>@(i+1)</td>
             <td>@Model[i].Author</td>
             <td>@(Model[i].Mark +" "+ Model[i].Series +" "+Model[i].Year) </td>
             <td>@Model[i].DateAdded</td>
-            <td><a href="#" class="btn btn-primary btn-xs">Mini button</a></td>
+            <td><a href="#" class="btn btn-danger btn-xs" onclick="@("deleteCar('"+ Model[i].CarId + "')")">Удалить</a></td>
         </tr>
         
     </tbody>
     }
-</table> 
+</table>
+
+<script>
+    function deleteCar(CarId) {
+        $.get("/UserActions/DeleteCar?CarId=" + CarId, function () {
+            var row = $("#entry" + CarId)
+            row.replaceWith("")
+        })
+    }
+</script> 

@@ -59,9 +59,12 @@ namespace CarsShop.Controllers
 
             db.SaveChanges();
 
-            AddEvent addEvent = new AddEvent();
-            addEvent.AddCar += C.WriteDeclaration;
-            addEvent.onAddEvent(User.Identity.Name);
+           
+            Thread myThread = new Thread(() => C.WriteDeclaration(this, User.Identity.Name));
+            myThread.Start();
+            // AddEvent addEvent = new AddEvent();
+            //addEvent.AddCar += C.WriteDeclaration;
+            //addEvent.onAddEvent(User.Identity.Name);
             mutex.ReleaseMutex();
             return RedirectToAction("Index");
         }
