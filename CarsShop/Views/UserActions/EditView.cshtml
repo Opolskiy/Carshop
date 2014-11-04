@@ -1,0 +1,53 @@
+﻿@using CarsShop.Models
+@model Car
+@{
+    ViewBag.Title = "EditView";
+    
+}
+
+<h2>Редактирование объявления</h2>
+
+@using (Html.BeginForm("AddEditons", "UserActions", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => Model.Mark, new { @class = "col-md-2 control-label helvetica4", @style = "font-weight: normal" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => Model.Mark, new { @class = "form-control", @style = "border-radius:10px; width:250px" })
+            @Html.ValidationMessageFor(m => m.Mark)
+        </div>
+        <br />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(m => Model.Series, new { @class = "col-md-2 control-label helvetica4", @style = "font-weight: normal" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => Model.Series, new { @class = "form-control", @style = "border-radius:10px; width:250px" })
+            @Html.ValidationMessageFor(m => m.Series)
+        </div>
+        <br />
+    </div>
+    <br />
+
+    <div class="form-group">
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.CheckBoxFor(m => Model.Conditioner)
+                @Html.LabelFor(m => Model.Conditioner, new { @style = "font-size:20px" })
+
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="form-group">
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.CheckBoxFor(m => Model.Ksenon)
+                @Html.LabelFor(m => Model.Ksenon, new { @style = "font-size:20px" })
+
+            </div>
+        </div>
+    </div>
+    <br />
+    @Html.Hidden("id",Model.CarId)
+    <input type="submit" class="btn btn-success btn-large" style="margin-left:900px; align-items:center" value="Подтвердить изменения" />
+}

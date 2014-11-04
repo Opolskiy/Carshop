@@ -35,10 +35,7 @@ namespace CarsShop.Controllers
             ApplicationDbContext db = new ApplicationDbContext();
             if (C != null)
             {
-                
-                string NameUser = User.Identity.Name;
-
-                C.Author = NameUser;
+                C.Author = User.Identity.Name;
                 C.DateAdded = DateTime.Now;
                 C.CarId = Guid.NewGuid();
                 db.Cars.Add(C);

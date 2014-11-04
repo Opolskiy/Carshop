@@ -1,4 +1,5 @@
 ﻿@model CarsShop.Models.MainParametrsCar
+
 @{
     ViewBag.Title = "Home Page";
 }
@@ -14,7 +15,7 @@
                 <span class="helvetica4">
                     Марка
                 </span>
-                    <select style="width: 120px; height: 30px; margin-left: 42px;border-radius:15px" id="Mark" name="Mark">
+                    <select style="width: 120px; height: 30px; margin-left: 42px;border-radius:10px" id="Mark" name="Mark">
                     <option value="" selected></option>
                     <option value="Audi">Audi</option>
                     <option value="BMW">BMW</option>
@@ -316,12 +317,7 @@
             </div>
         </div>
     </div>
-    <script>
-    function ClearSearchForm() {
-        $('select').val("");
-        $("input:checkbox").removeAttr("checked");
-    }
-    </script>
+   
 
     <div class="btn btn-default" style="margin-left:748px"  id="clearbtn">Очистить форму</div>
     <input type="submit" class="btn btn-success btn-large" style="margin-left:900px; margin-top:-57px;" value="Подобрать" />
@@ -329,41 +325,7 @@
     @*onclick="ClearSearchForm();"*@
 </form>
 
-<div class="container">
-    <div class="row">
-        <div class="well">
-            <h2 class="text-center">Топ-просмотр</h2>
-            <div class="list-group">
-                <a href="#" class="list-group-item">
-                    <div class="media col-md-3">
-                        <figure class="pull-left">
-                            <img class="media-object img-rounded img-responsive" src="\donthotlink-crazy-frog-1280x1024-2.jpg" alt="placehold.it/350x250">
-                        </figure>
-                    </div>
-                    <div class="col-md-6">
-                        <h4 class="list-group-item-heading"> Описание </h4>
-                        <p class="list-group-item-text">
-                            Qui diam libris ei, vidisse incorrupte at mel. His euismod salutandi dissentiunt eu. Habeo offendit ea mea. Nostro blandit sea ea, viris timeam molestiae an has. At nisl platonem eum.
-
-                        </p>
-                    </div>
-                    <div class="col-md-3 text-center">
-                        <h2> 14240 <small> Просмотров </small></h2>
-                        <input type="button" class="btn btn-default btn-lg btn-block">
-                        <div class="stars">
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star-empty"></span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
+@Html.Partial("TopView")
 
 
 @*<script>

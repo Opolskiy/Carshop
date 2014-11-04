@@ -11,7 +11,24 @@ namespace CarsShop.Controllers
 {
     public class UserActionsController : Controller
     {
-       
+        public ActionResult EditView(Guid CarId)
+        {
+            ApplicationDbContext Db = new ApplicationDbContext();
+            var car = Db.Cars.FirstOrDefault(c => c.CarId == CarId);
+           // Db.SaveChanges();
+            return View(car);
+        }
+
+        public ActionResult AddEditons(Car Model, Guid ?id)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            var changedCar = db.Cars.FirstOrDefault(c => c.CarId == id);
+            changedCar = Model;
+            db.Cars.Add(Model);
+            db.SaveChanges();
+            return RedirectToAction("MyDeclarations");
+        }
+
         public ActionResult CompareDeclarations()
         {
             return View();

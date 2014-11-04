@@ -105,3 +105,15 @@ e:\2\carshop\CarsShop\obj\Debug\CarsShop.Migrations.DateAdded.resources
 e:\2\carshop\CarsShop\obj\Debug\CarsShop.csproj.GenerateResource.Cache
 e:\2\carshop\CarsShop\obj\Debug\CarsShop.dll
 e:\2\carshop\CarsShop\obj\Debug\CarsShop.pdb
+E:\Carshop\CarsShop\bin\CarsShop.dll.config
+E:\Carshop\CarsShop\bin\CarsShop.dll
+E:\Carshop\CarsShop\bin\CarsShop.pdb
+E:\Carshop\CarsShop\bin\Microsoft.Web.Infrastructure.dll
+E:\Carshop\CarsShop\bin\Newtonsoft.Json.dll
+E:\Carshop\CarsShop\bin\Microsoft.Web.Infrastructure.xml
+E:\Carshop\CarsShop\obj\Debug\CarsShop.csprojResolveAssemblyReference.cache
+E:\Carshop\CarsShop\obj\Debug\CarsShop.Migrations.a.resources
+E:\Carshop\CarsShop\obj\Debug\CarsShop.Migrations.DateAdded.resources
+E:\Carshop\CarsShop\obj\Debug\CarsShop.csproj.GenerateResource.Cache
+E:\Carshop\CarsShop\obj\Debug\CarsShop.dll
+E:\Carshop\CarsShop\obj\Debug\CarsShop.pdb

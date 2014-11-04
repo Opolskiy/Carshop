@@ -7,7 +7,10 @@
 
 <h2 style="text-align:center">Мои объявления</h2>
 
-<table class="table table-striped table-hover ">
+
+
+<table class="table table-hover ">
+
     <thead>
         <tr>
             <th>#</th>
@@ -25,10 +28,12 @@
             <td>@(Model[i].Mark +" "+ Model[i].Series +" "+Model[i].Year) </td>
             <td>@Model[i].DateAdded</td>
             <td><a href="#" class="btn btn-danger btn-xs" onclick="@("deleteCar('"+ Model[i].CarId + "')")">Удалить</a></td>
+            <td><a href="@Url.Action("EditView", "UserActions", new { CarId = Model[i].CarId })" class="btn btn-info btn-xs">Редактировать</a></td>
         </tr>
         
     </tbody>
     }
+    
 </table>
 
 <script>
@@ -39,3 +44,9 @@
         })
     }
 </script> 
+
+<script>
+    $(document).ready(function () {
+        $("tbody tr td").hover(function () { $(this).css("color", "red"); }, function () { $(this).css("color", "black") });
+    });
+</script>

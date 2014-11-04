@@ -247,6 +247,9 @@
     <Content Include="Views\Search\SearchResult.cshtml" />
     <Content Include="Views\UserActions\MyDeclarations.cshtml" />
     <Content Include="Views\UserActions\CompareDeclarations.cshtml" />
+    <Content Include="Views\UserActions\Comments.cshtml" />
+    <Content Include="Views\Home\TopView.cshtml" />
+    <Content Include="Views\UserActions\EditView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
