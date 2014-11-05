@@ -117,3 +117,4 @@ E:\Carshop\CarsShop\obj\Debug\CarsShop.Migrations.DateAdded.resources
 E:\Carshop\CarsShop\obj\Debug\CarsShop.csproj.GenerateResource.Cache
 E:\Carshop\CarsShop\obj\Debug\CarsShop.dll
 E:\Carshop\CarsShop\obj\Debug\CarsShop.pdb
+E:\Carshop\CarsShop\obj\Debug\CarsShop.Migrations.qweqwe.resources

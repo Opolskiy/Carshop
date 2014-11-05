@@ -109,5 +109,16 @@ namespace CarsShop.Models
             }
         }
 
+        //public static void ReloadDeclaration(Car c)
+        //{
+        //    lock (sync)
+        //    {
+        //        ApplicationDbContext db = new ApplicationDbContext();
+        //        c.CarId = Guid.NewGuid();
+        //        db.Cars.Add(c);
+        //        db.SaveChanges();
+        //    }
+        //}
+
     }   
 }

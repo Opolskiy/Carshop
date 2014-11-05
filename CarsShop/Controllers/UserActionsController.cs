@@ -5,27 +5,55 @@ using System.Web;
 using System.Web.Mvc;
 using System.ComponentModel.DataAnnotations;
 using CarsShop.Models;
+using System.Threading;
 
 
 namespace CarsShop.Controllers
 {
     public class UserActionsController : Controller
     {
+        private static Mutex mutex = new Mutex();
         public ActionResult EditView(Guid CarId)
         {
             ApplicationDbContext Db = new ApplicationDbContext();
             var car = Db.Cars.FirstOrDefault(c => c.CarId == CarId);
-           // Db.SaveChanges();
+            // Db.SaveChanges();
             return View(car);
         }
 
-        public ActionResult AddEditons(Car Model, Guid ?id)
+        public ActionResult AddEditons(Car Model, Guid? id)
         {
-            ApplicationDbContext db = new ApplicationDbContext();
-            var changedCar = db.Cars.FirstOrDefault(c => c.CarId == id);
-            changedCar = Model;
-            db.Cars.Add(Model);
-            db.SaveChanges();
+            mutex.WaitOne();
+            
+            //Thread myThread = new Thread(() =>
+            //{
+                ApplicationDbContext db = new ApplicationDbContext();
+                //var arr = typeof(Car).GetProperties();
+                
+                       Model.CarId = Guid.NewGuid();
+                       db.Cars.Add(Model);
+                //var changedCar = db.Cars.Where(c => c.CarId == id).ToArray()[0];
+                Car blabla = db.Cars.FirstOrDefault(c => c.CarId == id);
+                db.Cars.Remove(blabla);
+                //db.SaveChanges();
+                db.SaveChanges();
+                //for (int i = 0; i < arr.Count(); i++)
+                //{
+                //    if (i != 15)
+                //    {
+                //        arr[i].SetValue(changedCar, arr[i].GetValue(Model));
+                //    }
+                //}
+              //  Car.ReloadDeclaration(Model);
+                //if (ModelState.IsValid == true)
+                //{
+                //    Model.CarId = Guid.NewGuid();
+                //    db.Cars.Add(Model);
+                //    db.SaveChanges();
+                //}
+            //});
+           // myThread.Start();
+           mutex.ReleaseMutex();
             return RedirectToAction("MyDeclarations");
         }
 
@@ -35,24 +63,23 @@ namespace CarsShop.Controllers
         }
 
         [Authorize]
-        
         public ActionResult MyDeclarations()
         {
-           
+
             ApplicationDbContext Db = new ApplicationDbContext();
             List<Car> list = Db.Cars.Where(s => s.Author == User.Identity.Name).ToList();
-            list.Sort(delegate(Car x, Car y) 
+            list.Sort(delegate(Car x, Car y)
             {
                 if (x.DateAdded > y.DateAdded) return -1;
                 if (x.DateAdded < y.DateAdded) return 1;
                 else return 0;
-            } 
+            }
             );
             return View(list);
         }
-        
 
-        public ActionResult DeleteCar (Guid CarId)
+
+        public ActionResult DeleteCar(Guid CarId)
         {
             ApplicationDbContext Db = new ApplicationDbContext();
             var car = Db.Cars.FirstOrDefault(c => c.CarId == CarId);
@@ -60,5 +87,5 @@ namespace CarsShop.Controllers
             Db.SaveChanges();
             return RedirectToAction("MyDeclarations");
         }
-	}
+    }
 }

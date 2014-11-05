@@ -19,7 +19,7 @@
                 @Html.LabelFor(m => m.Mark, new { @class = "col-md-3 control-label helvetica4", @style = "font-weight: normal" })
                 <div class="col-md-5">
                     @Html.TextBoxFor(m => m.Mark, new { @class = "form-control", @style = "border-radius:10px;" })
-                    @Html.ValidationMessageFor(m => m.Mark)
+                    @Html.ValidationMessageFor(m => Model.Mark)
                 </div>
                 <br />
             </div>

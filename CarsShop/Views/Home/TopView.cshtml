@@ -1,0 +1,49 @@
+﻿@using CarsShop.Models
+@model Car
+
+@{
+    
+    ApplicationDbContext db = new ApplicationDbContext();
+    Car car = null;
+    int cViews = 0;
+    foreach (var c in db.Cars)
+    {
+        if (c.CountViews > cViews) {car = c;}
+    }
+}
+
+<div class="container">
+    <div class="row">
+        <div class="well">
+            <h2 class="text-center">Топ-просмотр</h2>
+            <div class="list-group">
+                <a href="#" class="list-group-item">
+                    <div class="media col-md-3">
+                        <figure class="pull-left">
+                            <img class="media-object img-rounded img-responsive" src="\donthotlink-crazy-frog-1280x1024-2.jpg" alt="placehold.it/350x250">
+                        </figure>
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="list-group-item-heading"> Описание </h4>
+                        <p class="list-group-item-text">
+
+
+                        </p>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <h2> @car.CountViews <small> Просмотров </small></h2>
+                        <input type="button" class="btn btn-default btn-lg btn-block" id="topcomments" value="Oтзывы">
+                        <div class="stars">
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
