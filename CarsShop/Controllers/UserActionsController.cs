@@ -13,6 +13,12 @@ namespace CarsShop.Controllers
     public class UserActionsController : Controller
     {
         private static Mutex mutex = new Mutex();
+
+        public ActionResult Comments(Guid CarId)
+        {
+            return View(CarId);
+        }
+
         public ActionResult EditView(Guid CarId)
         {
             ApplicationDbContext Db = new ApplicationDbContext();
