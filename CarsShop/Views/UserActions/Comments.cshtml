@@ -5,3 +5,23 @@
 
 <h2>Comments</h2>
 <h4>@Model</h4>
+<div id="CommentsBlock">
+    <p class="comment-form-comment">
+        <label for="comment" style="font-family:Arial, Helvetica, sans-serif;font-size:20px;"><i>Комментировать:</i></label> <br />
+        <textarea id="comment" name="comment" cols="400" rows="4" aria-required="true"></textarea>
+    </p>
+</div>
+<div class="btn btn-success"  id="AddComm">Добавить комментарий</div>
+@*<a href="#" class="btn btn-success">Success</a>*@
+
+<script>
+    $(document).ready(function () {
+        $('div#AddComm').click(function () {
+            var o = document.createElement('textarea')
+            var text = document.getElementById('comment')
+            o.innerHTML = text.value
+            document.getElementById('CommentsBlock').appendChild(o)
+            $('textarea#comment').val("")
+        });
+    });
+</script>
