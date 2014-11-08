@@ -21,7 +21,9 @@ namespace CarsShop.Controllers
             ApplicationDbContext Db = new ApplicationDbContext();
             List<Car> list = Db.Cars.Where(s => (s.Mark == Data.Mark || Data.Mark == null) 
                                               && (s.Country == Data.Country || Data.Country == null)).ToList();
-            return View(list);
+             List<Picture> pics= Db.Pictures.ToList();
+             CarDataList result = new CarDataList(list,pics);
+            return View(result);
         }
 	}
 }

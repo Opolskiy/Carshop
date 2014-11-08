@@ -14,7 +14,7 @@ namespace CarsShop.Controllers
     {
         private static Mutex mutex = new Mutex();
 
-        public ActionResult Comments(Guid CarId)
+        public ActionResult Comments(Guid CarId)//
         {
             return View(CarId);
         }

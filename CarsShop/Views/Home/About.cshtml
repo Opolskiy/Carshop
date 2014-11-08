@@ -1,4 +1,6 @@
-﻿@{
+﻿@using CarsShop.Models
+@model CarDataList
+@{
     ViewBag.Title = "About";
 }
 
@@ -9,6 +11,28 @@
     <li>Пискун Денис</li>
     </h4>
 </ul><br>
+@foreach (var car in Model.Cars)
+{
+    foreach(var pic in Model.Pictures)
+    {
+              <p>
+             @(car.Mark)
+        </p>
+      <p>
+             @if (pic.PicId == car.CarId)
+             {
+                   <p>
+             @(car.CarId)
+                </p>
+                   <p>
+             @(pic.PicId)
+        </p>
+                 @Html.Raw("<img style = 'width:80px; height:60px;' src=\"data:image/jpeg;base64,"
+                                                      + Convert.ToBase64String(pic.Image) + "\" />") 
+             }
+     </p>
+    }
+}
 Email: CarshopSDS@gamil.com
 
 

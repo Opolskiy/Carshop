@@ -41,9 +41,18 @@ namespace CarsShop.Controllers
                 db.Cars.Add(C);
             }
 
-            if (fileUpload != null)
+            if (ModelState.IsValid && fileUpload!=null)
             {
+                byte[] imageData = null;
+                using(var binaryReader = new BinaryReader(fileUpload.InputStream))
+                {
+                    imageData = binaryReader.ReadBytes(fileUpload.ContentLength);
 
+                }
+                pic.Image = imageData;
+                pic.PicId = C.CarId;
+                db.Pictures.Add(pic);
+                /*
                 using (var img = new Bitmap(fileUpload.InputStream))
                 {
                     CreateFile(HttpRuntime.AppDomainAppPath + "/Photo/" + pic.Id + ".jpg", img);
@@ -51,6 +60,7 @@ namespace CarsShop.Controllers
                
                 pic.PicId = C.CarId;
                 db.Pictures.Add(pic);
+                 */
                 
             }
 
@@ -77,7 +87,13 @@ namespace CarsShop.Controllers
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
-            return View();
+           // ApplicationDbContext Db = new ApplicationDbContext();
+            //List<Car> list = Db.Cars.Where(s => s.Author == User.Identity.Name).ToList();
+            ApplicationDbContext Db = new ApplicationDbContext();
+            List<Car> list = Db.Cars.ToList();
+            List<Picture> pics = Db.Pictures.Where(s => s.PicId != null).ToList();
+            CarDataList result = new CarDataList(list, pics);
+            return View(result);
         }
 
         public ActionResult Contact()
