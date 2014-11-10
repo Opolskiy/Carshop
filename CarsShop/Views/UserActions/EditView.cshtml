@@ -9,9 +9,12 @@
 
 @using (Html.BeginForm("AddEditons", "UserActions", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
+    @Html.Hidden("id", Model.CarId)
+    <div class="row">
+        <div class="col-md-8">
     <div class="form-group">
-        @Html.LabelFor(m => Model.Mark, new { @class = "col-md-2 control-label helvetica4", @style = "font-weight: normal" })
-        <div class="col-md-10">
+        @Html.LabelFor(m => Model.Mark, new { @class = "col-md-3 control-label helvetica4", @style = "font-weight: normal" })
+        <div class="col-md-5">
             @Html.TextBoxFor(m => Model.Mark, new { @class = "form-control", @style = "border-radius:10px; width:250px" })
             @Html.ValidationMessageFor(m => m.Mark)
         </div>
@@ -19,8 +22,8 @@
     </div>
     <br />
     <div class="form-group">
-        @Html.LabelFor(m => Model.Series, new { @class = "col-md-2 control-label helvetica4", @style = "font-weight: normal" })
-        <div class="col-md-10">
+        @Html.LabelFor(m => Model.Series, new { @class = "col-md-3 control-label helvetica4", @style = "font-weight: normal" })
+        <div class="col-md-5">
             @Html.TextBoxFor(m => Model.Series, new { @class = "form-control", @style = "border-radius:10px; width:250px" })
             @Html.ValidationMessageFor(m => m.Series)
         </div>
@@ -28,8 +31,8 @@
     </div>
     <br />
     <div class="form-group">
-        @Html.LabelFor(m => Model.BodyType, new { @class = "col-md-2 control-label helvetica4", @style = "font-weight: normal" })
-        <div class="col-md-10">
+        @Html.LabelFor(m => Model.BodyType, new { @class = "col-md-3 control-label helvetica4", @style = "font-weight: normal" })
+        <div class="col-md-5">
             @Html.TextBoxFor(m => Model.BodyType, new { @class = "form-control", @style = "border-radius:10px; width:250px" })
             @Html.ValidationMessageFor(m => m.BodyType)
         </div>
@@ -37,8 +40,8 @@
     </div>
     <br />
     <div class="form-group">
-        @Html.LabelFor(m => Model.Country, new { @class = "col-md-2 control-label helvetica4", @style = "font-weight: normal" })
-        <div class="col-md-10">
+        @Html.LabelFor(m => Model.Country, new { @class = "col-md-3 control-label helvetica4", @style = "font-weight: normal" })
+        <div class="col-md-5">
             @Html.TextBoxFor(m => Model.Country, new { @class = "form-control", @style = "border-radius:10px; width:250px" })
             @Html.ValidationMessageFor(m => m.Country)
         </div>
@@ -46,8 +49,8 @@
     </div>
     <br />
     <div class="form-group">
-        @Html.LabelFor(m => Model.City, new { @class = "col-md-2 control-label helvetica4", @style = "font-weight: normal" })
-        <div class="col-md-10">
+        @Html.LabelFor(m => Model.City, new { @class = "col-md-3 control-label helvetica4", @style = "font-weight: normal" })
+        <div class="col-md-5">
             @Html.TextBoxFor(m => Model.City, new { @class = "form-control", @style = "border-radius:10px; width:250px" })
             @Html.ValidationMessageFor(m => m.City)
         </div>
@@ -55,8 +58,8 @@
     </div>
     <br />
     <div class="form-group">
-        @Html.LabelFor(m => Model.Price, new { @class = "col-md-2 control-label helvetica4", @style = "font-weight: normal" })
-        <div class="col-md-10">
+        @Html.LabelFor(m => Model.Price, new { @class = "col-md-3 control-label helvetica4", @style = "font-weight: normal" })
+        <div class="col-md-5">
             @Html.TextBoxFor(m => Model.Price, new { @class = "form-control", @style = "border-radius:10px; width:250px" })
             @Html.ValidationMessageFor(m => m.Price)
         </div>
@@ -64,8 +67,8 @@
     </div>
     <br />
     <div class="form-group">
-        @Html.LabelFor(m => Model.Color, new { @class = "col-md-2 control-label helvetica4", @style = "font-weight: normal" })
-        <div class="col-md-10">
+        @Html.LabelFor(m => Model.Color, new { @class = "col-md-3 control-label helvetica4", @style = "font-weight: normal" })
+        <div class="col-md-5">
             @Html.TextBoxFor(m => Model.Color, new { @class = "form-control", @style = "border-radius:10px; width:250px" })
             @Html.ValidationMessageFor(m => m.Color)
         </div>
@@ -73,8 +76,8 @@
     </div>
     <br />
     <div class="form-group">
-        @Html.LabelFor(m => Model.Distance, new { @class = "col-md-2 control-label helvetica4", @style = "font-weight: normal" })
-        <div class="col-md-10">
+        @Html.LabelFor(m => Model.Distance, new { @class = "col-md-3 control-label helvetica4", @style = "font-weight: normal" })
+        <div class="col-md-5">
             @Html.TextBoxFor(m => Model.Distance, new { @class = "form-control", @style = "border-radius:10px; width:250px" })
             @Html.ValidationMessageFor(m => m.Distance)
         </div>
@@ -82,8 +85,8 @@
     </div>
     <br />
     <div class="form-group">
-        @Html.LabelFor(m => Model.Drive, new { @class = "col-md-2 control-label helvetica4", @style = "font-weight: normal" })
-        <div class="col-md-10">
+        @Html.LabelFor(m => Model.Drive, new { @class = "col-md-3 control-label helvetica4", @style = "font-weight: normal" })
+        <div class="col-md-5">
             @Html.TextBoxFor(m => Model.Drive, new { @class = "form-control", @style = "border-radius:10px; width:250px" })
             @Html.ValidationMessageFor(m => m.Drive)
         </div>
@@ -91,8 +94,8 @@
     </div>
     <br />
     <div class="form-group">
-        @Html.LabelFor(m => Model.FuelType, new { @class = "col-md-2 control-label helvetica4", @style = "font-weight: normal" })
-        <div class="col-md-10">
+        @Html.LabelFor(m => Model.FuelType, new { @class = "col-md-3 control-label helvetica4", @style = "font-weight: normal" })
+        <div class="col-md-5">
             @Html.TextBoxFor(m => Model.FuelType, new { @class = "form-control", @style = "border-radius:10px; width:250px" })
             @Html.ValidationMessageFor(m => m.FuelType)
         </div>
@@ -100,8 +103,8 @@
     </div>
     <br />
     <div class="form-group">
-        @Html.LabelFor(m => Model.Transmission, new { @class = "col-md-2 control-label helvetica4", @style = "font-weight: normal" })
-        <div class="col-md-10">
+        @Html.LabelFor(m => Model.Transmission, new { @class = "col-md-3 control-label helvetica4", @style = "font-weight: normal" })
+        <div class="col-md-5">
             @Html.TextBoxFor(m => Model.Transmission, new { @class = "form-control", @style = "border-radius:10px; width:250px" })
             @Html.ValidationMessageFor(m => m.Transmission)
         </div>
@@ -109,35 +112,97 @@
     </div>
     <br />
     <div class="form-group">
-        @Html.LabelFor(m => Model.Year, new { @class = "col-md-2 control-label helvetica4", @style = "font-weight: normal" })
-        <div class="col-md-10">
+        @Html.LabelFor(m => Model.Year, new { @class = "col-md-3 control-label helvetica4", @style = "font-weight: normal" })
+        <div class="col-md-5">
             @Html.TextBoxFor(m => Model.Year, new { @class = "form-control", @style = "border-radius:10px; width:250px" })
             @Html.ValidationMessageFor(m => m.Year)
         </div>
         <br />
     </div>
     <br />
+    </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <div class="col-md-10">
+                    <div class="checkbox">
+                        @Html.CheckBoxFor(m => Model.Conditioner)
+                        @Html.LabelFor(m => Model.Conditioner, new { @style = "font-size:20px" })
 
-    <div class="form-group">
-        <div class="col-md-10">
-            <div class="checkbox">
-                @Html.CheckBoxFor(m => Model.Conditioner)
-                @Html.LabelFor(m => Model.Conditioner, new { @style = "font-size:20px" })
-
+                    </div>
+                </div>
             </div>
+            <br />
+            <div class="form-group">
+                <div class="col-md-10">
+                    <div class="checkbox">
+                        @Html.CheckBoxFor(m => Model.Ksenon)
+                        @Html.LabelFor(m => Model.Ksenon, new { @style = "font-size:20px" })
+
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <div class="col-md-10">
+                    <div class="checkbox">
+                        @Html.CheckBoxFor(m => Model.ESP)
+                        @Html.LabelFor(m => Model.ESP, new { @style = "font-size:20px" })
+
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <div class="col-md-10">
+                    <div class="checkbox">
+                        @Html.CheckBoxFor(m => Model.HeatedSeats)
+                        @Html.LabelFor(m => Model.HeatedSeats, new { @style = "font-size:20px" })
+
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <div class="col-md-10">
+                    <div class="checkbox">
+                        @Html.CheckBoxFor(m => Model.LeatherSeats)
+                        @Html.LabelFor(m => Model.LeatherSeats, new { @style = "font-size:20px" })
+
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <div class="col-md-10">
+                    <div class="checkbox">
+                        @Html.CheckBoxFor(m => Model.LegkosplavlennyeWheels)
+                        @Html.LabelFor(m => Model.LegkosplavlennyeWheels, new { @style = "font-size:20px" })
+
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <div class="col-md-10">
+                    <div class="checkbox">
+                        @Html.CheckBoxFor(m => Model.Parktronic)
+                        @Html.LabelFor(m => Model.Parktronic, new { @style = "font-size:20px" })
+
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <div class="col-md-10">
+                    <div class="checkbox">
+                        @Html.CheckBoxFor(m => Model.Speakerphone)
+                        @Html.LabelFor(m => Model.Speakerphone, new { @style = "font-size:20px" })
+
+                    </div>
+                </div>
+            </div>
+            <br />  
         </div>
     </div>
-    <br />
-    <div class="form-group">
-        <div class="col-md-10">
-            <div class="checkbox">
-                @Html.CheckBoxFor(m => Model.Ksenon)
-                @Html.LabelFor(m => Model.Ksenon, new { @style = "font-size:20px" })
-
-            </div>
-        </div>
-    </div>
-    <br />
-    @Html.Hidden("id",Model.CarId)
     <input type="submit" class="btn btn-success btn-large" style="margin-left:900px; align-items:center" value="Подтвердить изменения" />
 }

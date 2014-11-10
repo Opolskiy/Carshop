@@ -37,4 +37,21 @@ namespace CarsShop.Models
         }
         
     }
+    public class CarDataList
+    {
+        public CarDataList(List<Car> CarList,List<Picture> AllPictures)
+        {
+            Cars = CarList;
+            Pictures = new List<Picture>();
+            foreach(Car car in CarList)
+                foreach (Picture pic in AllPictures)
+                {
+                    if (car.CarId == pic.PicId)
+                        Pictures.Add(pic);
+                }
+
+        }
+        public List<Car> Cars { get; set; }
+        public List<Picture> Pictures { get; set; }
+    }
 }

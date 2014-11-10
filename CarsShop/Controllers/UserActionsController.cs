@@ -14,7 +14,7 @@ namespace CarsShop.Controllers
     {
         private static Mutex mutex = new Mutex();
 
-        public ActionResult Comments(Guid CarId)
+        public ActionResult Comments(Guid CarId)//
         {
             return View(CarId);
         }
@@ -29,37 +29,20 @@ namespace CarsShop.Controllers
 
         public ActionResult AddEditons(Car Model, Guid? id)
         {
-            mutex.WaitOne();
-            
-            //Thread myThread = new Thread(() =>
-            //{
+           
                 ApplicationDbContext db = new ApplicationDbContext();
-                //var arr = typeof(Car).GetProperties();
+                var arr = typeof(Car).GetProperties();    
+                var changedCar = db.Cars.Where(c => c.CarId == id).ToArray()[0];
+               
                 
-                       Model.CarId = Guid.NewGuid();
-                       db.Cars.Add(Model);
-                //var changedCar = db.Cars.Where(c => c.CarId == id).ToArray()[0];
-                Car blabla = db.Cars.FirstOrDefault(c => c.CarId == id);
-                db.Cars.Remove(blabla);
-                //db.SaveChanges();
+                for (int i = 0; i < arr.Count(); i++)
+                {
+                    if (i != 15 && i != 12 && i != 13)
+                    {
+                        arr[i].SetValue(changedCar, arr[i].GetValue(Model));
+                    }
+                }
                 db.SaveChanges();
-                //for (int i = 0; i < arr.Count(); i++)
-                //{
-                //    if (i != 15)
-                //    {
-                //        arr[i].SetValue(changedCar, arr[i].GetValue(Model));
-                //    }
-                //}
-              //  Car.ReloadDeclaration(Model);
-                //if (ModelState.IsValid == true)
-                //{
-                //    Model.CarId = Guid.NewGuid();
-                //    db.Cars.Add(Model);
-                //    db.SaveChanges();
-                //}
-            //});
-           // myThread.Start();
-           mutex.ReleaseMutex();
             return RedirectToAction("MyDeclarations");
         }
 

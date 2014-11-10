@@ -2,11 +2,11 @@ var http = require('https');
 var fs = require('fs');
 
 var options = {
-  // key: fs.readFileSync('./ssl/server.key'),
-  // cert: fs.readFileSync('./ssl/server.crt'),
-  // ca: fs.readFileSync('./ssl/ca.crt'),
-  //questCert: true,
-  //rejectUnauthorized: false
+   key: fs.readFileSync('./ssl/server.key'),
+   cert: fs.readFileSync('./ssl/server.crt'),
+   ca: fs.readFileSync('./ssl/ca.crt'),
+  questCert: true,
+  rejectUnauthorized: false
 };
 
 http.createServer(options, function(req, res){
