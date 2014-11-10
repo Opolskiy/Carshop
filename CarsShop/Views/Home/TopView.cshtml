@@ -2,14 +2,9 @@
 @model Car
 
 @{
-    
-    ApplicationDbContext db = new ApplicationDbContext();
-    Car car = null;
-    int cViews = 0;
-    foreach (var c in db.Cars)
-    {
-        if (c.CountViews >= cViews) {car = c;}
-    }
+    ApplicationDbContext db = new ApplicationDbContext(); 
+    int maxViews = db.Cars.Max(c => c.CountViews);
+    Car car = db.Cars.FirstOrDefault(c => c.CountViews == maxViews);
 }
 
 <div class="container">
