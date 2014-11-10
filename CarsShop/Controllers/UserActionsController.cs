@@ -14,8 +14,13 @@ namespace CarsShop.Controllers
     {
         private static Mutex mutex = new Mutex();
 
-        public ActionResult Comments(Guid CarId)//
+        public ActionResult Comments(Guid CarId)
         {
+            var prop = typeof(Car).GetProperty("CountViews");
+            ApplicationDbContext Db = new ApplicationDbContext();
+            var car = Db.Cars.FirstOrDefault(c => c.CarId == CarId);
+            prop.SetValue(car, car.CountViews + 1);
+            Db.SaveChanges();
             return View(CarId);
         }
 
@@ -23,7 +28,6 @@ namespace CarsShop.Controllers
         {
             ApplicationDbContext Db = new ApplicationDbContext();
             var car = Db.Cars.FirstOrDefault(c => c.CarId == CarId);
-            // Db.SaveChanges();
             return View(car);
         }
 
