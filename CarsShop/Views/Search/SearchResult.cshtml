@@ -5,9 +5,10 @@
 }
 
 <h2 style="text-align:center">Результаты поиска</h2>
+<input id="compare-button" type="button" class="btn btn-default" value="Сравнить цены">
 @foreach (Car c in Model.Cars)
 {
-    <div class="list-group" id="@("entry" + c.CarId)">
+    <div class="list-group" id="@c.CarId">
         <a href="@Url.Action("Comments", "UserActions", new { CarId = c.CarId })" class="list-group-item">
             <div class="media col-md-3" style="border:#808080">
                 <figure class="pull-left">
@@ -33,14 +34,21 @@
             </div>
             <div class="col-md-3 text-center">
                 <h2> @c.CountViews <small> Просмотров </small></h2>
-                <div class="stars">
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star-empty"></span>
-                </div>
+
+                Выбрать <br>для сравнения<br>
+                <input class="compare-checkbox" type="checkbox" />
+
             </div>
         </a>
     </div>
-} 
+}
+
+<script>
+    $("#compare-button").click(function () {
+        var selectedCars = [];
+        $(".compare-checkbox:checked").each(function (index, element) {
+            selectedCars.push($(element).parent().parent().parent().attr("id"));
+        });
+        window.location.href = "/Search/Compare?cars=" + JSON.stringify(selectedCars);
+    });
+</script>
