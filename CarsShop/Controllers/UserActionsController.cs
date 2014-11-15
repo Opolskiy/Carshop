@@ -21,7 +21,7 @@ namespace CarsShop.Controllers
             var car = Db.Cars.FirstOrDefault(c => c.CarId == CarId);
             prop.SetValue(car, car.CountViews + 1);
             Db.SaveChanges();
-            return View(CarId);
+            return View(car);
         }
 
         public ActionResult EditView(Guid CarId)
