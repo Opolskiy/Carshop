@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CarsShop.Models;
+using System.Web.Script.Serialization;
 
 namespace CarsShop.Controllers
 {
@@ -25,5 +26,18 @@ namespace CarsShop.Controllers
              CarDataList result = new CarDataList(list,pics);
             return View(result);
         }
+
+        public ActionResult Compare(string cars)
+        {
+            using (ApplicationDbContext Db = new ApplicationDbContext())
+            {
+                var serializer = new JavaScriptSerializer();
+                List<Guid> selectedCarList = serializer.Deserialize<List<Guid>>(cars);
+                List<Car> list = Db.Cars.Where(s => selectedCarList.Contains(s.CarId)).ToList();
+                return View(list);
+            }
+        }
+
+
 	}
 }

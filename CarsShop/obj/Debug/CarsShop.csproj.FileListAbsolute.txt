@@ -142,5 +142,11 @@ E:\Carshop\CarsShop\bin\EntityFramework.SqlServer.xml
 E:\Carshop\CarsShop\bin\ru\EntityFramework.resources.dll
 E:\Carshop\CarsShop\bin\ru\EntityFramework.SqlServer.resources.dll
 E:\Carshop\CarsShop\obj\Debug\CarsShop.Migrations.MigrateDB.resources
+e:\2\carshop\CarsShop\bin\EntityFramework.xml
+e:\2\carshop\CarsShop\bin\EntityFramework.SqlServer.xml
+e:\2\carshop\CarsShop\bin\ru\EntityFramework.resources.dll
+e:\2\carshop\CarsShop\bin\ru\EntityFramework.SqlServer.resources.dll
+e:\2\carshop\CarsShop\obj\Debug\CarsShop.Migrations.qweqwe.resources
+e:\2\carshop\CarsShop\obj\Debug\CarsShop.Migrations.MigrateDB.resources
 E:\Carshop\CarsShop\bin\System.dll
-E:\Carshop\CarsShop\obj\Debug\CarsShop.Migrations.TableCooments.resources
+E:\Carshop\CarsShop\obj\Debug\CarsShop.Migrations.TableComments.resources

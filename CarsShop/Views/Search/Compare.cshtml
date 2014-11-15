@@ -1,0 +1,35 @@
+﻿@using CarsShop.Models
+@model IEnumerable<Car>
+@{
+    ViewBag.Title = "SearchResult";
+}
+
+<h2 style="text-align:center">Сравнение</h2>
+@foreach (var c in Model)
+{
+    <div class="list-group">
+        <a id="@(c.CarId)" href="#" class="list-group-item">
+            <div class="media col-md-3">
+                <figure class="pull-left">
+                    <img class="media-object img-rounded img-responsive" src="\donthotlink-crazy-frog-1280x1024-2.jpg" alt="placehold.it/350x250">
+                </figure>
+            </div>
+            <div class="col-md-6">
+                <h4 class="list-group-item-heading"> Описание </h4>
+                <p class="list-group-item-text" style="font-size : 20px">
+                    @(c.Mark + " " + c.Series + " " + c.BodyType + " " + c.Color + " " + "Цвет" + " " +
+                   c.Drive + " " + "Привод" + " " + c.FuelType + " " + c.Transmission + " " + "Год выпуска" + " " + c.Year
+                   + " " + c.Country + " " + c.City)
+                </p>
+            </div>
+            <div class="col-md-3 text-center">
+                <h2> @c.CountViews <small> Просмотров </small></h2>
+                <input type="button" class="btn btn-default btn-lg btn-block">
+                <div class="stars">
+
+
+                </div>
+            </div>
+        </a>
+    </div>
+}

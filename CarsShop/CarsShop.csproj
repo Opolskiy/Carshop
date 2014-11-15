@@ -183,9 +183,9 @@
     <Compile Include="Migrations\201411081359548_MigrateDB.Designer.cs">
       <DependentUpon>201411081359548_MigrateDB.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201411152224231_TableCooments.cs" />
-    <Compile Include="Migrations\201411152224231_TableCooments.Designer.cs">
-      <DependentUpon>201411152224231_TableCooments.cs</DependentUpon>
+    <Compile Include="Migrations\201411152231368_TableComments.cs" />
+    <Compile Include="Migrations\201411152231368_TableComments.Designer.cs">
+      <DependentUpon>201411152231368_TableComments.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -265,6 +265,7 @@
     <Content Include="Views\UserActions\Comments.cshtml" />
     <Content Include="Views\Home\TopView.cshtml" />
     <Content Include="Views\UserActions\EditView.cshtml" />
+    <Content Include="Views\Search\Compare.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -283,8 +284,8 @@
     <EmbeddedResource Include="Migrations\201411081359548_MigrateDB.resx">
       <DependentUpon>201411081359548_MigrateDB.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201411152224231_TableCooments.resx">
-      <DependentUpon>201411152224231_TableCooments.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201411152231368_TableComments.resx">
+      <DependentUpon>201411152231368_TableComments.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
