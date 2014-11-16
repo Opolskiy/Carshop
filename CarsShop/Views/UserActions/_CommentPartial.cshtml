@@ -6,15 +6,25 @@
     }
 </style>
 
+<script>
+    function ShowDeleteButton(id) {
+        $('#but' + id).removeClass('hidden');
+    }
+
+    function HideDeleteButton(id) {
+        $('#but' + id).addClass('hidden');
+    }
+</script>
     @foreach ( CarsShop.Models.Comment a in ViewBag.ListComments )
     {
-        <div style="width:400px;
-	height:100px;
-    border-radius:10px;
-	border:1px solid #000000;
-	background:#eee;
+
+        <div onmouseover="ShowDeleteButton(@("'"+a.CommentId+"'"))" onmouseout="HideDeleteButton(@("'"+a.CommentId+"'"))"   style=" width:400px;
+             height:100px;
+             border-radius:10px;
+             border:1px solid #000000;
+             background:#eee;
              text-align:center" id="@("entry" + a.CommentId)">
-            <button style="margin-left:373px;border-radius:8px;color:white;" onclick="@("deleteComment('"+ a.CommentId + "')")">X</button>
+            <button class="hidden" style="margin-left:373px;border-radius:8px;color:white;" id="@("but" + a.CommentId)" onclick="@("deleteComment('"+ a.CommentId + "')")">X</button>
             <br />
             <span style="font-family:'Courier New';font-size:16px; font-weight:800">@(a.Author + " " + "написал" + " " + a.Date)</span>
             <p style="margin: 0px 10px 10px;text-align:left">@(a.Data)</p>
