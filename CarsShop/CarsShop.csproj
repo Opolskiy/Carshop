@@ -266,6 +266,8 @@
     <Content Include="Views\Home\TopView.cshtml" />
     <Content Include="Views\UserActions\EditView.cshtml" />
     <Content Include="Views\Search\Compare.cshtml" />
+    <Content Include="Views\UserActions\_CommentPartial.cshtml" />
+    <Content Include="Views\UserActions\Viewsplusplus.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

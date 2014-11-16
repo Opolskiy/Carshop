@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace CarsShop.Models
 {
@@ -11,6 +12,7 @@ namespace CarsShop.Models
         public Guid CommentId { get; set; }
         public string Author { get; set; }
         public DateTime Date { get; set; }
+        [Display(Name = "Ваш отзыв")]
         public string Data { get; set; }
     }
 }

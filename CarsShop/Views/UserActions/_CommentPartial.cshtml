@@ -1,0 +1,42 @@
+﻿@model CarsShop.Models.Comment
+<style>
+    button:hover {
+    background: #ff0000;
+    color: #ffe;
+    }
+</style>
+
+    @foreach ( CarsShop.Models.Comment a in ViewBag.ListComments )
+    {
+        <div style="width:400px;
+	height:100px;
+    border-radius:10px;
+	border:1px solid #000000;
+	background:#eee;
+             text-align:center" id="@("entry" + a.CommentId)">
+            <button style="margin-left:373px;border-radius:8px;color:white;" onclick="@("deleteComment('"+ a.CommentId + "')")">X</button>
+            <br />
+            <span style="font-family:'Courier New';font-size:16px; font-weight:800">@(a.Author + " " + "написал" + " " + a.Date)</span>
+            <p style="margin: 0px 10px 10px;text-align:left">@(a.Data)</p>
+        </div>
+        <br />
+    }
+@using ( Html.BeginForm("NewComment", "UserActions", FormMethod.Post, new { enctype = "multipart/form-data" }) )
+    {
+    @Html.Hidden("CarId", Model.CarId)
+    <div class="form-group">
+        @Html.LabelFor(m => Model.Data, new { @style = "font-family: Courier New; font-size:22px" })
+        @Html.TextAreaFor(m => Model.Data, new { @class = "form-control", @style = "border-radius:10px", @name = "message", @placeholder = "Текст сообщения" })
+    </div>
+    <button type="submit" class="btn btn-default" style="font-family:'Courier New'">Отправить</button>
+}
+
+<script>
+    function deleteComment(CommentId) {
+        $.get("/UserActions/DeleteComment?CommentId=" + CommentId, function (data) {
+            if (data == "error") return;
+            var row = $("#entry" + CommentId)
+            row.replaceWith("")
+        })
+    }
+</script> 

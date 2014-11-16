@@ -9,7 +9,7 @@
 @foreach (Car c in Model.Cars)
 {
     <div class="list-group" id="@c.CarId">
-        <a href="@Url.Action("Comments", "UserActions", new { CarId = c.CarId })" class="list-group-item">
+        <a href="@Url.Action("Viewsplusplus", "UserActions", new { CarId = c.CarId })" class="list-group-item">
             <div class="media col-md-3" style="border:#808080">
                 <figure class="pull-left">
                     @foreach (Picture pic in Model.Pictures)
