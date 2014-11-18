@@ -10,5 +10,6 @@ namespace CarsShop.Models
         public int Id { get; set; }
         public Guid PicId { get; set; }
         public byte[] Image { get; set;}
+        public bool AvatarPic { get; set; }
     }
 }

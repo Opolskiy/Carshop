@@ -50,6 +50,7 @@ namespace CarsShop.Controllers
 
                 }
                 pic.Image = imageData;
+                pic.AvatarPic = true;
                 pic.PicId = C.CarId;
                 db.Pictures.Add(pic);
                 /*

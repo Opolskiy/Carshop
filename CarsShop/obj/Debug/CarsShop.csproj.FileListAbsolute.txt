@@ -150,3 +150,6 @@ e:\2\carshop\CarsShop\obj\Debug\CarsShop.Migrations.qweqwe.resources
 e:\2\carshop\CarsShop\obj\Debug\CarsShop.Migrations.MigrateDB.resources
 E:\Carshop\CarsShop\bin\System.dll
 E:\Carshop\CarsShop\obj\Debug\CarsShop.Migrations.TableComments.resources
+D:\CarShop\carshop\CarsShop\bin\System.dll
+D:\CarShop\carshop\CarsShop\obj\Debug\CarsShop.Migrations.TableComments.resources
+D:\CarShop\carshop\CarsShop\obj\Debug\CarsShop.Migrations.MigrateDB1.resources

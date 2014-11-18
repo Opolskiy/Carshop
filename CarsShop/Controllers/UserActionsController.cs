@@ -6,8 +6,9 @@ using System.Web.Mvc;
 using System.ComponentModel.DataAnnotations;
 using CarsShop.Models;
 using System.Threading;
-
-
+using System.Drawing.Imaging;
+using System.Drawing;
+using System.IO;
 namespace CarsShop.Controllers
 {
     public class UserActionsController : Controller
@@ -129,6 +130,29 @@ namespace CarsShop.Controllers
             var car = Db.Cars.FirstOrDefault(c => c.CarId == CarId);
             Db.Cars.Remove(car);
             Db.SaveChanges();
+            return RedirectToAction("MyDeclarations");
+        }
+        public ActionResult AddPicture(Guid? id, HttpPostedFileBase fileUpload,Picture pic) 
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+
+            var changedCar = db.Cars.Where(c => c.CarId == id).ToArray()[0];
+
+            if (fileUpload != null)
+            {
+                byte[] imageData = null;
+                using (var binaryReader = new BinaryReader(fileUpload.InputStream))
+                {
+                    imageData = binaryReader.ReadBytes(fileUpload.ContentLength);
+
+                }
+                pic.Image = imageData;
+                pic.AvatarPic = false;
+                pic.PicId = changedCar.CarId;
+                db.Pictures.Add(pic);
+            }
+
+            db.SaveChanges();
             return RedirectToAction("MyDeclarations");
         }
     }

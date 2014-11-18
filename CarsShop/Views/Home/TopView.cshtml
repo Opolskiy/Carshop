@@ -5,6 +5,7 @@
     ApplicationDbContext db = new ApplicationDbContext(); 
     int maxViews = db.Cars.Max(c => c.CountViews);
     Car car = db.Cars.FirstOrDefault(c => c.CountViews == maxViews);
+    Picture pic = db.Pictures.FirstOrDefault(p => p.PicId == car.CarId && p.AvatarPic == true);
 }
 
 <div class="container">
@@ -15,7 +16,11 @@
                 <a href="@Url.Action("Viewsplusplus", "UserActions", new { CarId = car.CarId })" class="list-group-item">
                     <div class="media col-md-3">
                         <figure class="pull-left">
-                            <img class="media-object img-rounded img-responsive" src="\donthotlink-crazy-frog-1280x1024-2.jpg" alt="placehold.it/350x250">
+                            @if(pic != null)
+                            { 
+                                    @Html.Raw("<img style = 'width:260px; height:200px; border:1px solid rgba(0,148,225,0.3);' src=\"data:image/jpeg;base64,"
+                                                      + Convert.ToBase64String(pic.Image) + "\" />")
+                            }
                         </figure>
                     </div>
                     <div class="col-md-6">

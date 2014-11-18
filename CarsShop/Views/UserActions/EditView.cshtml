@@ -206,3 +206,11 @@
     </div>
     <input type="submit" class="btn btn-success btn-large" style="margin-left:900px; align-items:center" value="Подтвердить изменения" />
 }
+@using (Html.BeginForm("AddPicture", "UserActions", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+     @Html.Hidden("id", Model.CarId)
+                  <div class="editor-field">
+                    <input type="file" name="fileUpload" />
+                </div>
+        <input type="submit" class="btn btn-success btn-large" style="margin-left:900px;" value="Добавить" />
+}
