@@ -1,8 +1,19 @@
-﻿@model CarsShop.Models.Car
+﻿@using CarsShop.Models
+@model CarsShop.Models.Car
 @{
     ViewBag.Title = "Comments";
+    ApplicationDbContext db = new ApplicationDbContext();
+    List<Picture> pic = db.Pictures.Where(p => p.PicId == Model.CarId).ToList();
+    
 }
+   @foreach (Picture p in pic)
+                    {
+                     
 
+                                    @Html.Raw("<img style = 'width:260px; height:200px; border:1px solid rgba(0,148,225,0.3);' src=\"data:image/jpeg;base64,"
+                                                      + Convert.ToBase64String(p.Image) + "\" />")
+
+                    }
 
 <h2 style="text-align:center">Комментарии @(Model.Mark + " " + Model.Series)</h2>
 <h4 style="text-align:end">Данное объявление смотрели @Model.CountViews раз</h4>

@@ -1,0 +1,11 @@
+﻿@using CarsShop.Models
+@model Picture
+<div id="newpicture">
+    @if (Model != null)
+    {
+        if (Model.Image != null) {
+        @Html.Raw("<img style = 'width:260px; height:200px; border:1px solid rgba(0,148,225,0.3);' src=\"data:image/jpeg;base64,"
+                                                      + Convert.ToBase64String(Model.Image) + "\" />")
+                                 }    
+    }
+</div>
