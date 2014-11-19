@@ -6,6 +6,16 @@
 
 <h2 style="text-align:center">Комментарии @(Model.Mark + " " + Model.Series)</h2>
 <h4 style="text-align:end">Данное объявление смотрели @Model.CountViews раз</h4>
+<div class="glyphicon glyphicon-heart-empty" onclick="@("newLike('"+ Model.CarId + "')")">
+</div>
+
+<script>
+     function newLike(CarId) {
+         $.get("/Like/NewLike?CarId=" + CarId, function (data) {
+             alert(data);
+         })
+     }
+</script>
 
 @Html.Action("_CommentPartial",Model.CarId)
 

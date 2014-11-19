@@ -161,6 +161,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\LikeController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserActionsController.cs" />
@@ -191,10 +192,27 @@
     <Compile Include="Migrations\201411181358224_MigrateDB1.Designer.cs">
       <DependentUpon>201411181358224_MigrateDB1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201411182047111_list.cs" />
+    <Compile Include="Migrations\201411182047111_list.Designer.cs">
+      <DependentUpon>201411182047111_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201411182049425_sasda.cs" />
+    <Compile Include="Migrations\201411182049425_sasda.Designer.cs">
+      <DependentUpon>201411182049425_sasda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201411182112075_a1.cs" />
+    <Compile Include="Migrations\201411182112075_a1.Designer.cs">
+      <DependentUpon>201411182112075_a1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201411182333453_bbb.cs" />
+    <Compile Include="Migrations\201411182333453_bbb.Designer.cs">
+      <DependentUpon>201411182333453_bbb.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Car.cs" />
     <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\Like.cs" />
     <Compile Include="Models\MainParametrsCar.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\MyList.cs" />
@@ -296,9 +314,22 @@
     <EmbeddedResource Include="Migrations\201411181358224_MigrateDB1.resx">
       <DependentUpon>201411181358224_MigrateDB1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201411182047111_list.resx">
+      <DependentUpon>201411182047111_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201411182049425_sasda.resx">
+      <DependentUpon>201411182049425_sasda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201411182112075_a1.resx">
+      <DependentUpon>201411182112075_a1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201411182333453_bbb.resx">
+      <DependentUpon>201411182333453_bbb.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Like\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -15,6 +15,7 @@ namespace CarsShop.Models
         {
         }
 
+        public DbSet<Like> Likes { get; set; } 
         public DbSet<Car> Cars { get; set; }
         public DbSet<Picture> Pictures { get; set; }
         public DbSet<Comment> Comments { get; set; }
