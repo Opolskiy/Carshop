@@ -73,6 +73,7 @@ namespace CarsShop.Controllers
         {
             ApplicationDbContext Db = new ApplicationDbContext();
             var car = Db.Cars.FirstOrDefault(c => c.CarId == CarId);
+            ViewBag.LikesCount = Db.Likes.Where(s => s.CarId == CarId).ToList().Count;
             return View(car);
         }
 
