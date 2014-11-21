@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.ComponentModel.DataAnnotations;
 using CarsShop.Models;
 using System.Threading;
-using System.Drawing.Imaging;
-using System.Drawing;
 using System.IO;
 namespace CarsShop.Controllers
 {

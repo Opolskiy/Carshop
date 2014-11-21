@@ -25,21 +25,14 @@
                     </div>
                     <div class="col-md-6">
                         <h4 class="list-group-item-heading"> Описание </h4>
-                        <p class="list-group-item-text">
-
-
+                        <p class="list-group-item-text" style="font-size : 20px;font-family:'Courier New'">
+                            @("Марка:" + car.Mark + " " + car.Series + " " + car.BodyType + ";" + "Цвет:" + car.Color + " " +
+                  "Привод:" + car.Drive + ";" + car.FuelType + " " + "Коробка:" + car.Transmission + ";" + "Год выпуска:" + car.Year + ";Пробег:" + car.Distance)
                         </p>
                     </div>
                     <div class="col-md-3 text-center">
                         <h2> @car.CountViews <small> Просмотров </small></h2>
-                        <div class="stars">
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star-empty"></span>
-                            
-                        </div>
+                        <h4>@(car.Price + "$")</h4>
                     </div>
                 </a>
             </div>

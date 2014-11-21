@@ -4,9 +4,15 @@
     ViewBag.Title = "SearchResult";
 }
 
+@if ( Model.Cars.Count == 0 )
+{
+    <h2 style="text-align:center">Ничего не найдено</h2>
+}
+else
+{
 <h2 style="text-align:center">Результаты поиска</h2>
 <input id="compare-button" type="button" class="btn btn-default" value="Сравнить цены">
-@foreach (Car c in Model.Cars)
+foreach (Car c in Model.Cars)
 {
     <div class="list-group" id="@c.CarId">
         <a href="@Url.Action("Viewsplusplus", "UserActions", new { CarId = c.CarId })" class="list-group-item">
@@ -27,21 +33,21 @@
 
             <div class="col-md-6">
                 <h4 class="list-group-item-heading"> Описание </h4>
-                <p class="list-group-item-text" style="font-size : 20px">
-                    @(c.Mark + " " + c.Series + " " + c.BodyType + " " + c.Color + " " + "Цвет" + " " +
-                   c.Drive + " " + "Привод" + " " + c.FuelType + " " + c.Transmission + " " + "Год выпуска" + " " + c.Year
-                   + " " + c.Country + " " + c.City)
+                <p class="list-group-item-text" style="font-size : 20px;font-family:'Courier New'">
+                    @("Марка:"+c.Mark + " " + c.Series + " " + c.BodyType + ";" + "Цвет:" +c.Color + " " + 
+                  "Привод:" + c.Drive + ";" + c.FuelType + " " + "Коробка:" + c.Transmission + ";" + "Год выпуска:" + c.Year + ";Пробег:" + c.Distance)
                 </p>
             </div>
             <div class="col-md-3 text-center">
                 <h2> @c.CountViews <small> Просмотров </small></h2>
-
+                <h4>@(c.Price + "$")</h4>
                 Выбрать <br>для сравнения<br>
                 <input class="compare-checkbox" type="checkbox" />
 
             </div>
         </a>
     </div>
+}
 }
 
 <script>
