@@ -6,30 +6,36 @@
     List<Picture> pic = db.Pictures.Where(p => p.PicId == Model.CarId).ToList();
     
 }
-   @foreach (Picture p in pic)
-                    {
-                     
 
-                                    @Html.Raw("<img style = 'width:260px; height:200px; border:1px solid rgba(0,148,225,0.3);' src=\"data:image/jpeg;base64,"
+<div id="container">
+    @foreach (Picture p in pic)
+    {
+
+        <div class="img">
+        <a href="#">
+            @Html.Raw("<img style = 'width:240px; height:200px; border:1px solid rgba(0,148,225,0.3);' src=\"data:image/jpeg;base64,"
                                                       + Convert.ToBase64String(p.Image) + "\" />")
+        </a>
+        </div>
+    }
+    <div class="clear"></div>
+</div>
 
-                    }
+    <h2 style="text-align:center">Комментарии @(Model.Mark + " " + Model.Series)</h2>
+    <h4 style="text-align:end">Данное объявление смотрели @Model.CountViews раз</h4>
+    <div class="glyphicon glyphicon-heart-empty" style="float:right;font-size:20px" onclick="@("newLike('"+ Model.CarId + "')")"></div>
+    <div style="text-align:center;font-family:'Courier New';font-size:20px" id="likeIt">@("Данное объявление понравилось " + ViewBag.LikesCount)</div>
 
-<h2 style="text-align:center">Комментарии @(Model.Mark + " " + Model.Series)</h2>
-<h4 style="text-align:end">Данное объявление смотрели @Model.CountViews раз</h4>
-<div class="glyphicon glyphicon-heart-empty" style="float:right;font-size:20px" onclick="@("newLike('"+ Model.CarId + "')")"></div>
-<div style="text-align:center;font-family:'Courier New';font-size:20px" id="likeIt" >@("Данное объявление понравилось "+ ViewBag.LikesCount)</div>
+    <script>
+        function newLike(CarId) {
+            $.get("/Like/NewLike?CarId=" + CarId, function (data) {
+                var a = document.getElementById('likeIt');
+                a.innerHTML = 'Данное объявление понравилось ' + data;
+            })
+        }
+    </script>
 
-<script>
-     function newLike(CarId) {
-         $.get("/Like/NewLike?CarId=" + CarId, function (data) {
-             var a = document.getElementById('likeIt');
-             a.innerHTML ='Данное объявление понравилось ' + data;
-         })
-     }
-</script>
-
-@Html.Action("_CommentPartial",Model.CarId)
+    @Html.Action("_CommentPartial", Model.CarId)
 
 
 

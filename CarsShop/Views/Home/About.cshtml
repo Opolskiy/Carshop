@@ -4,28 +4,37 @@
     ViewBag.Title = "About";
 }
 
+
 <h3>Разработчики</h3><br>
 <ul>
 <li>Ополько Сергей</li>
     <li>Ляльковский Степан</li>
     <li>Пискун Денис</li>
 </ul><br>
-@foreach (var car in Model.Cars)
-{
-                    foreach (Picture pic in Model.Pictures)
-                    {
-                        if(pic.PicId == car.CarId)
-                        {
-                            @(pic.PicId + " " + pic.AvatarPic)
-                            
-                                        @Html.Raw("<img style = 'width:260px; height:200px; border:1px solid rgba(0,148,225,0.3);' src=\"data:image/jpeg;base64,"
-                                                      + Convert.ToBase64String(pic.Image) + "\" />") 
-                        }
-                
 
-                    }
+    @foreach (var car in Model.Cars)
+    {
 
-}
-Email: CarshopSDS@gamil.com
+        foreach (Picture pic in Model.Pictures)
+        {
+            if (pic.PicId == car.CarId)
+            {
+                @*(pic.PicId + " " + pic.AvatarPic)*@
+
+                    <a href="#">
+                        @Html.Raw("<img style = 'width:150px; height:150px; border:1px solid rgba(0,148,225,0.3);' src=\"data:image/jpeg;base64,"
+                                                      + Convert.ToBase64String(pic.Image) + "\" />")
+                    </a>
+   
+
+            }
+
+
+        }
+
+    }
+    <div class="clear"></div>
+
+    Email: CarshopSDS@gamil.com
 
 

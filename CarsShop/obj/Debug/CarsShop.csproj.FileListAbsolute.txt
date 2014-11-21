@@ -125,10 +125,6 @@ D:\CarShop\carshop\CarsShop\bin\Microsoft.Web.Infrastructure.dll
 D:\CarShop\carshop\CarsShop\bin\Newtonsoft.Json.dll
 D:\CarShop\carshop\CarsShop\bin\System.Web.Mvc.dll
 D:\CarShop\carshop\CarsShop\bin\Microsoft.Web.Infrastructure.xml
-D:\CarShop\carshop\CarsShop\bin\EntityFramework.xml
-D:\CarShop\carshop\CarsShop\bin\EntityFramework.SqlServer.xml
-D:\CarShop\carshop\CarsShop\bin\ru\EntityFramework.resources.dll
-D:\CarShop\carshop\CarsShop\bin\ru\EntityFramework.SqlServer.resources.dll
 D:\CarShop\carshop\CarsShop\obj\Debug\CarsShop.csprojResolveAssemblyReference.cache
 D:\CarShop\carshop\CarsShop\obj\Debug\CarsShop.Migrations.a.resources
 D:\CarShop\carshop\CarsShop\obj\Debug\CarsShop.Migrations.DateAdded.resources
@@ -178,3 +174,7 @@ C:\Users\Сергей\Desktop\carshop\CarsShop\obj\Debug\CarsShop.Migrations.lis
 C:\Users\Сергей\Desktop\carshop\CarsShop\obj\Debug\CarsShop.Migrations.sasda.resources
 C:\Users\Сергей\Desktop\carshop\CarsShop\obj\Debug\CarsShop.Migrations.a1.resources
 C:\Users\Сергей\Desktop\carshop\CarsShop\obj\Debug\CarsShop.Migrations.bbb.resources
+D:\CarShop\carshop\CarsShop\obj\Debug\CarsShop.Migrations.list.resources
+D:\CarShop\carshop\CarsShop\obj\Debug\CarsShop.Migrations.sasda.resources
+D:\CarShop\carshop\CarsShop\obj\Debug\CarsShop.Migrations.a1.resources
+D:\CarShop\carshop\CarsShop\obj\Debug\CarsShop.Migrations.bbb.resources
