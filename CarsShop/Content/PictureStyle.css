@@ -1,0 +1,21 @@
+﻿#container{
+margin-top: 100px;
+
+}
+
+.img{
+z-index: 0;
+display:inline;
+}
+
+.end{
+margin-right: 0;
+}
+
+.clear{
+clear: both;
+}
+.img a img{
+position: relative;
+border: 0 solid #fff;
+}
