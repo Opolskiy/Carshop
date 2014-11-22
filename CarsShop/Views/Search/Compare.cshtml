@@ -3,6 +3,14 @@
 @{
     ViewBag.Title = "SearchResult";
 }
+
+@if ( Model.Count() < 2 || Model.Count() > 3 )
+{
+    <h2 style="text-align:center">Выберите для сравнения 2 или 3 модели</h2>
+    <h4 style="text-align:center;font-family:'Courier New'">Вы выбрали @Model.Count() модели</h4>
+}
+else
+{
 <h2 style="text-align:center">Сравнение</h2>
 <br>
 <div >
@@ -204,3 +212,4 @@
     </div>
 <div>
 </div>
+}

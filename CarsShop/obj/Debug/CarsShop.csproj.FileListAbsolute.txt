@@ -152,10 +152,6 @@ C:\Users\Сергей\Desktop\carshop\CarsShop\bin\Microsoft.Web.Infrastructure.
 C:\Users\Сергей\Desktop\carshop\CarsShop\bin\Newtonsoft.Json.dll
 C:\Users\Сергей\Desktop\carshop\CarsShop\bin\System.dll
 C:\Users\Сергей\Desktop\carshop\CarsShop\bin\Microsoft.Web.Infrastructure.xml
-C:\Users\Сергей\Desktop\carshop\CarsShop\bin\EntityFramework.xml
-C:\Users\Сергей\Desktop\carshop\CarsShop\bin\EntityFramework.SqlServer.xml
-C:\Users\Сергей\Desktop\carshop\CarsShop\bin\ru\EntityFramework.resources.dll
-C:\Users\Сергей\Desktop\carshop\CarsShop\bin\ru\EntityFramework.SqlServer.resources.dll
 C:\Users\Сергей\Desktop\carshop\CarsShop\obj\Debug\CarsShop.csprojResolveAssemblyReference.cache
 C:\Users\Сергей\Desktop\carshop\CarsShop\obj\Debug\CarsShop.Migrations.a.resources
 C:\Users\Сергей\Desktop\carshop\CarsShop\obj\Debug\CarsShop.Migrations.DateAdded.resources
