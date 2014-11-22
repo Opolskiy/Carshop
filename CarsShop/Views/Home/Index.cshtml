@@ -319,23 +319,21 @@
     </div>
    
 
-    <div class="btn btn-default" style="margin-left:748px"  id="clearbtn">Очистить форму</div>
+    <div class="btn btn-default" style="margin-left:748px" id="clearbtn" onclick="ClearSearchForm()";>Очистить форму</div>
     <input type="submit" class="btn btn-success btn-large" style="margin-left:900px; margin-top:-57px;" value="Подобрать" />
     
     @*onclick="ClearSearchForm();"*@
 </form>
 
-@Html.Partial("TopView")
-
 
 <script>
-    $(document).ready(function () {
-        $('div#clearbtn').click(function () {
-            $('select').val("");
-            $("input:checkbox").removeAttr("checked");
-        });
-    });
+    function ClearSearchForm() {
+        $('select').val("");
+        $("input:checkbox").removeAttr("checked");
+    }
 </script>
+
+@Html.Partial("TopView")
 
 @*<script>
        
