@@ -6,113 +6,119 @@
     List<Picture> pic = db.Pictures.Where(p => p.PicId == Model.CarId).ToList();
 
 }
-@foreach ( Picture p in pic )
-{
+<div id="container">
+    @foreach (Picture p in pic)
+    {
 
-
-    @Html.Raw("<img style = 'width:260px; height:200px; border:1px solid rgba(0,148,225,0.3);' src=\"data:image/jpeg;base64,"
+        <div class="img">
+            <a href="#">
+                @Html.Raw("<img style = 'width:260px; height:200px; border:1px solid rgba(0,148,225,0.3);' src=\"data:image/jpeg;base64,"
                                                       + Convert.ToBase64String(p.Image) + "\" />")
+            </a>
+        </div>
 
-}
-<h2 style="text-align:center">Комментарии @(Model.Mark + " " + Model.Series)</h2>
-<div class="row">
-
-    <div class="col-md-4">
-        <h4 style="text-align:left">@(Model.Price + "$ " + Model.Distance + "км " + Model.City)</h4>
-    </div>
-    <div class="col-md-4">
-        <h4 style="text-align:center;font-family:'Courier New';font-size:20px" id="likeIt">@("Данное объявление понравилось " + ViewBag.LikesCount)</h4>
-    </div>
-    <div class="col-md-4">
-        <h4 style="text-align:end">Данное объявление смотрели @Model.CountViews раз</h4>
-        
-    </div>
-    <br />
-    <div class="glyphicon glyphicon-heart-empty" style="float:right;font-size:20px;" onclick="@("newLike('"+ Model.CarId + "')")"></div>
-    <br/>
-</div>
-
-<div class="row">
-    <div class="col-md-3">
-        @if ( Model.Conditioner == true )
-        {
-            <div class="glyphicon-plus" style="color:green;font-family:'Courier New';font-size:16px"> Кондиционер</div>
-        }
-        else
-        {
-            <div class="glyphicon-minus" style="color:red;font-family:'Courier New';font-size:16px"> Кондиционер</div>
-        }
-        @if ( Model.LeatherSeats == true )
-        {
-            <div class="glyphicon-plus" style="color:green;font-family:'Courier New';font-size:16px"> Кожаный салон</div>
-        }
-        else
-        {
-            <div class="glyphicon-minus" style="color:red;font-family:'Courier New';font-size:16px"> Кожаный салон</div>
-        }
-    </div>
-    <div class="col-md-3">
-        @if ( Model.HeatedSeats == true )
-        {
-            <div class="glyphicon-plus" style="color:green;font-family:'Courier New';font-size:16px"> Подогрев сидений</div>
-        }
-        else
-        {
-            <div class="glyphicon-minus" style="color:red;font-family:'Courier New';font-size:16px"> Подогрев сидений</div>
-        }
-        @if ( Model.Parktronic == true )
-        {
-            <div class="glyphicon-plus" style="color:green;font-family:'Courier New';font-size:16px"> Парктроник</div>
-        }
-        else
-        {
-            <div class="glyphicon-minus" style="color:red;font-family:'Courier New';font-size:16px"> Парктроник</div>
-        }
-    </div>
-    <div class="col-md-3">
-        @if ( Model.Ksenon == true )
-        {
-            <div class="glyphicon-plus" style="color:green;font-family:'Courier New';font-size:16px"> Ксенон</div>
-        }
-        else
-        {
-            <div class="glyphicon-minus" style="color:red;font-family:'Courier New';font-size:16px"> Ксенон</div>
-        }
-        @if ( Model.Speakerphone == true )
-        {
-            <div class="glyphicon-plus" style="color:green;font-family:'Courier New';font-size:16px"> Громкая связь</div>
-        }
-        else
-        {
-            <div class="glyphicon-minus" style="color:red;font-family:'Courier New';font-size:16px"> Громкая связь</div>
-        }
-    </div>
-    <div class="col-md-3">
-        @if ( Model.LegkosplavlennyeWheels == true )
-        {
-            <div class="glyphicon-plus" style="color:green;font-family:'Courier New';font-size:16px"> Легкосплавленные диски</div>
-        }
-        else
-        {
-            <div class="glyphicon-minus" style="color:red;font-family:'Courier New';font-size:16px"> Легкосплавленные диски</div>
-        }
-        @if ( Model.ESP == true )
-        {
-            <div class="glyphicon-plus" style="color:green;font-family:'Courier New';font-size:16px"> Система контроля стабилизации</div>
-        }
-        else
-        {
-            <div class="glyphicon-minus" style="color:red;font-family:'Courier New';font-size:16px"> Система контроля стабилизации</div>
-        }
-    </div>
-</div>
-<script>
-    function newLike(CarId) {
-        $.get("/Like/NewLike?CarId=" + CarId, function (data) {
-            var a = document.getElementById('likeIt');
-            a.innerHTML = 'Данное объявление понравилось ' + data;
-        })
     }
-</script>
-@Html.Action("_CommentPartial", Model.CarId)
+    <div class="clear"></div>  
+</div>
+    <h2 style="text-align:center">Комментарии @(Model.Mark + " " + Model.Series)</h2>
+    <div class="row">
+
+        <div class="col-md-4">
+            <h4 style="text-align:left">@(Model.Price + "$ " + Model.Distance + "км " + Model.City)</h4>
+        </div>
+        <div class="col-md-4">
+            <h4 style="text-align:center;font-family:'Courier New';font-size:20px" id="likeIt">@("Данное объявление понравилось " + ViewBag.LikesCount)</h4>
+        </div>
+        <div class="col-md-4">
+            <h4 style="text-align:end">Данное объявление смотрели @Model.CountViews раз</h4>
+
+        </div>
+        <br />
+        <div class="glyphicon glyphicon-heart-empty" style="float:right;font-size:20px;" onclick="@("newLike('"+ Model.CarId + "')")"></div>
+        <br />
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            @if (Model.Conditioner == true)
+            {
+                <div class="glyphicon-plus" style="color:green;font-family:'Courier New';font-size:16px"> Кондиционер</div>
+            }
+            else
+            {
+                <div class="glyphicon-minus" style="color:red;font-family:'Courier New';font-size:16px"> Кондиционер</div>
+            }
+            @if (Model.LeatherSeats == true)
+            {
+                <div class="glyphicon-plus" style="color:green;font-family:'Courier New';font-size:16px"> Кожаный салон</div>
+            }
+            else
+            {
+                <div class="glyphicon-minus" style="color:red;font-family:'Courier New';font-size:16px"> Кожаный салон</div>
+            }
+        </div>
+        <div class="col-md-3">
+            @if (Model.HeatedSeats == true)
+            {
+                <div class="glyphicon-plus" style="color:green;font-family:'Courier New';font-size:16px"> Подогрев сидений</div>
+            }
+            else
+            {
+                <div class="glyphicon-minus" style="color:red;font-family:'Courier New';font-size:16px"> Подогрев сидений</div>
+            }
+            @if (Model.Parktronic == true)
+            {
+                <div class="glyphicon-plus" style="color:green;font-family:'Courier New';font-size:16px"> Парктроник</div>
+            }
+            else
+            {
+                <div class="glyphicon-minus" style="color:red;font-family:'Courier New';font-size:16px"> Парктроник</div>
+            }
+        </div>
+        <div class="col-md-3">
+            @if (Model.Ksenon == true)
+            {
+                <div class="glyphicon-plus" style="color:green;font-family:'Courier New';font-size:16px"> Ксенон</div>
+            }
+            else
+            {
+                <div class="glyphicon-minus" style="color:red;font-family:'Courier New';font-size:16px"> Ксенон</div>
+            }
+            @if (Model.Speakerphone == true)
+            {
+                <div class="glyphicon-plus" style="color:green;font-family:'Courier New';font-size:16px"> Громкая связь</div>
+            }
+            else
+            {
+                <div class="glyphicon-minus" style="color:red;font-family:'Courier New';font-size:16px"> Громкая связь</div>
+            }
+        </div>
+        <div class="col-md-3">
+            @if (Model.LegkosplavlennyeWheels == true)
+            {
+                <div class="glyphicon-plus" style="color:green;font-family:'Courier New';font-size:16px"> Легкосплавленные диски</div>
+            }
+            else
+            {
+                <div class="glyphicon-minus" style="color:red;font-family:'Courier New';font-size:16px"> Легкосплавленные диски</div>
+            }
+            @if (Model.ESP == true)
+            {
+                <div class="glyphicon-plus" style="color:green;font-family:'Courier New';font-size:16px"> Система контроля стабилизации</div>
+            }
+            else
+            {
+                <div class="glyphicon-minus" style="color:red;font-family:'Courier New';font-size:16px"> Система контроля стабилизации</div>
+            }
+        </div>
+    </div>
+    <script>
+        function newLike(CarId) {
+            $.get("/Like/NewLike?CarId=" + CarId, function (data) {
+                var a = document.getElementById('likeIt');
+                a.innerHTML = 'Данное объявление понравилось ' + data;
+            })
+        }
+    </script>
+    @Html.Action("_CommentPartial", Model.CarId)
 

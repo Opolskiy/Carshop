@@ -49,13 +49,25 @@ foreach (Car c in Model.Cars)
     </div>
 }
 }
+@*
+    <script>
+        $("#checkbox").click(function () {
+            var selectedCars = [];
+            $(".compare-checkbox:checked").each(function (index, element) {
+                selectedCars.push($(element).parent().parent().parent().attr("id"));
+            });
+            window.location.href = "/Search/Compare?cars=" + JSON.stringify(selectedCars);
+        });
+    </script>
+
+*@
 
 <script>
     $("#compare-button").click(function () {
         var selectedCars = [];
         $(".compare-checkbox:checked").each(function (index, element) {
             selectedCars.push($(element).parent().parent().parent().attr("id"));
-        });
+        });  
         window.location.href = "/Search/Compare?cars=" + JSON.stringify(selectedCars);
     });
 </script>

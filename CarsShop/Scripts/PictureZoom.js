@@ -4,10 +4,10 @@
             // приближение
             $(this).parent().parent().css("z-index", 1);
             $(this).animate({
-               height: "400",
-               width: "480",
-               left: "-=100",
-               top: "-=120"
+               height: "350",
+               width: "430",
+               left: "-=75",
+               top: "-=85"
             }, "fast");
         }, function() {
             // отдаление
@@ -15,8 +15,8 @@
             $(this).animate({
                 height: "200",
                 width: "240",
-                left: "+=100",
-                top: "+=120"
+                left: "+=75",
+                top: "+=85"
             }, "fast");
         });
         
