@@ -4,70 +4,74 @@
     ViewBag.Title = "SearchResult";
 }
 
-@if ( Model.Cars.Count == 0 )
+@if (Model.Cars.Count == 0)
 {
     <h2 style="text-align:center">Ничего не найдено</h2>
 }
 else
 {
-<h2 style="text-align:center">Результаты поиска</h2>
-<input id="compare-button" type="button" class="btn btn-default" value="Сравнить цены">
-foreach (Car c in Model.Cars)
-{
-    <div class="list-group" id="@c.CarId">
-        <a href="@Url.Action("Viewsplusplus", "UserActions", new { CarId = c.CarId })" class="list-group-item">
-            <div class="media col-md-3" style="border:#808080">
-                <figure class="pull-left">
-                    @foreach (Picture pic in Model.Pictures)
-                    {
-                        if (pic.PicId == c.CarId && pic.AvatarPic == true)
+    <h2 style="text-align:center">Результаты поиска</h2>
+    <input id="compare-button" type="button" class="btn btn-default" value="Сравнить цены">
+    foreach (Car c in Model.Cars)
+    {
+        <div class="list-group" id="@c.CarId">
+            <a href="@Url.Action("Viewsplusplus", "UserActions", new { CarId = c.CarId })" class="list-group-item">
+                <div class="media col-md-3" style="border:#808080">
+                    <figure class="pull-left">
+                        @foreach (Picture pic in Model.Pictures)
                         {
-                            @Html.Raw("<img style = 'width:260px; height:200px; border:1px solid rgba(0,148,225,0.3);' src=\"data:image/jpeg;base64,"
+                            if (pic.PicId == c.CarId && pic.AvatarPic == true)
+                            {
+                                @Html.Raw("<img style = 'width:260px; height:200px; border:1px solid rgba(0,148,225,0.3);' src=\"data:image/jpeg;base64,"
                                                       + Convert.ToBase64String(pic.Image) + "\" />")
+                            }
+
                         }
 
-                    }
+                    </figure>
+                </div>
 
-                </figure>
-            </div>
-
-            <div class="col-md-6">
-                <h4 class="list-group-item-heading"> Описание </h4>
-                <p class="list-group-item-text" style="font-size : 20px;font-family:'Courier New'">
-                    @("Марка:"+c.Mark + " " + c.Series + " " + c.BodyType + ";" + "Цвет:" +c.Color + " " + 
+                <div class="col-md-6">
+                    <h4 class="list-group-item-heading"> Описание </h4>
+                    <p class="list-group-item-text" style="font-size : 20px;font-family:'Courier New'">
+                        @("Марка:" + c.Mark + " " + c.Series + " " + c.BodyType + ";" + "Цвет:" + c.Color + " " +
                   "Привод:" + c.Drive + ";" + c.FuelType + " " + "Коробка:" + c.Transmission + ";" + "Год выпуска:" + c.Year + ";Пробег:" + c.Distance)
-                </p>
-            </div>
-            <div class="col-md-3 text-center">
-                <h2> @c.CountViews <small> Просмотров </small></h2>
-                <h4>@(c.Price + "$")</h4>
-                Выбрать <br>для сравнения<br>
-                <input class="compare-checkbox" type="checkbox" />
+                    </p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <h2> @c.CountViews <small> Просмотров </small></h2>
+                    <h4>@(c.Price + "$")</h4>
+                    Выбрать <br>для сравнения<br>
+                    <input class="compare-checkbox chsets" type="checkbox" />
 
-            </div>
-        </a>
-    </div>
+                </div>
+            </a>
+        </div>
+    }
 }
-}
-@*
-    <script>
-        $("#checkbox").click(function () {
-            var selectedCars = [];
-            $(".compare-checkbox:checked").each(function (index, element) {
-                selectedCars.push($(element).parent().parent().parent().attr("id"));
-            });
-            window.location.href = "/Search/Compare?cars=" + JSON.stringify(selectedCars);
-        });
-    </script>
 
-*@
+<script>
+    function checkChecks() {
+        var ch = $(".chsets:checked");
+        if (ch.length > 2) {
+            $(".chsets").not(":checked").hide();
+        } else {
+            $(".chsets:checked").show();
+            $("input").not(":checked").show();
+
+        }
+    }
+    $(".chsets").click(checkChecks);
+</script>
+
 
 <script>
     $("#compare-button").click(function () {
         var selectedCars = [];
         $(".compare-checkbox:checked").each(function (index, element) {
             selectedCars.push($(element).parent().parent().parent().attr("id"));
-        });  
+        });
         window.location.href = "/Search/Compare?cars=" + JSON.stringify(selectedCars);
     });
 </script>
+
