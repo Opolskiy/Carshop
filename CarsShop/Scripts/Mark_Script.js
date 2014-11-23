@@ -13,7 +13,9 @@ var dataObject = {
 
     "Gelly": ",Emgrand 7,Emgrand 8,Emgrand X7,CK,MK,GS6,GX7,SX7,GC7",
 
-    "Hodna": ",Accord,Civic,CR-V,Crosstour,Element,FR-V,Insight,Jazz"
+    "Hodna": ",Accord,Civic,CR-V,Crosstour,Element,FR-V,Insight,Jazz",
+
+    "Mercedes": ",A180,A200,B180,B200,C180,C200,C250,E200,E220,E250,S320,S350,S400,S500,GL350,GL450,ML350"
 
 };
 

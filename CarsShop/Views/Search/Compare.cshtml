@@ -3,7 +3,6 @@
 @{
     ViewBag.Title = "SearchResult";
 }
-
 @if ( Model.Count() < 2 || Model.Count() > 3 )
 {
     <h2 style="text-align:center">Выберите для сравнения 2 или 3 модели</h2>
@@ -11,205 +10,202 @@
 }
 else
 {
-<h2 style="text-align:center">Сравнение</h2>
-<br>
-<div >
-    <div style="float:left">
-        <font color="#428bca">
-            <span class="helvetica4">
-                Марка
-            </span>
-            <br> <br>
-            <span class="helvetica4">
-                Модель
-            </span>
-            <br><br>
-            <span class="helvetica4">
-                Тип кузова
-            </span>
-            <br><br>
-            <span class="helvetica4">
-                Тип топлива
-            </span>
-            <br><br>
-            <span class="helvetica4">
-                Трансмиссия
-            </span>
-            <br><br>
-            <span class="helvetica4">
-                Цена
-            </span>
-            <br><br>
-            <span class="helvetica4">
-                Год выпуска
-            </span>
-            <br><br>
-            <span class="helvetica4">
-                Страна
-            </span>
-            <br><br>
-            <span class="helvetica4">
-                Город
-            </span>
-            <br><br>
-            <span class="helvetica4">
-                Привод
-            </span>
-            <br><br>
-            <span class="helvetica4">
-                Цвет
-            </span>
-            <br><br>
-            <span class="helvetica4">
-                Пробег
-            </span>
-            <br><br>
-            <span class="helvetica4">
-                Кондиционер
-            </span>
-            <br><br>
-            <span class="helvetica4">
-                Кожаный салон
-            </span>
-            <br><br>
-            <span class="helvetica4">
-                Подогрев сидений
-            </span>
-            <br><br>
-            <span class="helvetica4">
-                Парктроник
-            </span>
-            <br><br>
-            <span class="helvetica4">
-                Ксенон
-            </span>
-            <br><br>
-            <span class="helvetica4">
-                Громкая связь
-            </span>
-            <br><br>
-            <span class="helvetica4">
-                Легкосплавленные диски
-            </span>
-            <br><br>
-            <span class="helvetica4">
-                Система контроля стабилизации
-            </span>
-            <br><br>
-        </font>
+    <h2 style="text-align:center">Сравнение</h2>
+    <br>
+    <div>
+        <div style="float:left">
+            <font color="#428bca">
+                <span class="helvetica4">
+                    Марка
+                </span>
+                <br> <br>
+                <span class="helvetica4">
+                    Модель
+                </span>
+                <br><br>
+                <span class="helvetica4">
+                    Тип кузова
+                </span>
+                <br><br>
+                <span class="helvetica4">
+                    Тип топлива
+                </span>
+                <br><br>
+                <span class="helvetica4">
+                    Трансмиссия
+                </span>
+                <br><br>
+                <span class="helvetica4">
+                    Цена
+                </span>
+                <br><br>
+                <span class="helvetica4">
+                    Год выпуска
+                </span>
+                <br><br>
+                <span class="helvetica4">
+                    Страна
+                </span>
+                <br><br>
+                <span class="helvetica4">
+                    Город
+                </span>
+                <br><br>
+                <span class="helvetica4">
+                    Привод
+                </span>
+                <br><br>
+                <span class="helvetica4">
+                    Цвет
+                </span>
+                <br><br>
+                <span class="helvetica4">
+                    Пробег
+                </span>
+                <br><br>
+                <span class="helvetica4">
+                    Кондиционер
+                </span>
+                <br><br>
+                <span class="helvetica4">
+                    Кожаный салон
+                </span>
+                <br><br>
+                <span class="helvetica4">
+                    Подогрев сидений
+                </span>
+                <br><br>
+                <span class="helvetica4">
+                    Парктроник
+                </span>
+                <br><br>
+                <span class="helvetica4">
+                    Ксенон
+                </span>
+                <br><br>
+                <span class="helvetica4">
+                    Громкая связь
+                </span>
+                <br><br>
+                <span class="helvetica4">
+                    Легкосплавленные диски
+                </span>
+                <br><br>
+                <span class="helvetica4">
+                    Система контроля стабилизации
+                </span>
+                <br><br>
+            </font>
+        </div>
+        @foreach ( var c in Model )
+        {
+            <div style="float:left;margin-left:125px">
+                <span class="helvetica4">
+                    @(c.Mark)
+                </span>
+                <br><br>
+                <span class="helvetica4">
+                    @(c.Series)
+                </span>
+                <br><br>
+                <span class="helvetica4">
+                    @(c.BodyType)
+                </span>
+                <br><br>
+                <span class="helvetica4">
+                    @(c.FuelType)
+                </span>
+                <br><br>
+                <span class="helvetica4">
+                    @(c.Transmission)
+                </span>
+                <br><br>
+                <span class="helvetica4">
+                    @(c.Price)
+                </span>
+                <br><br>
+                <span class="helvetica4">
+                    @(c.Year)
+                </span>
+                <br><br>
+                <span class="helvetica4">
+                    @(c.Country)
+                </span>
+                <br><br>
+                <span class="helvetica4">
+                    @(c.City)
+                </span>
+                <br><br>
+                <span class="helvetica4">
+                    @(c.Drive)
+                </span>
+                <br><br>
+                <span class="helvetica4">
+                    @(c.Color)
+                </span>
+                <br><br>
+                <span class="helvetica4">
+                    @(c.Distance)
+                </span>
+                <br><br>
+
+                @if ( (c.Conditioner) == false )
+                {<span class="helvetica4"> - </span> }
+                @if ( (c.Conditioner) == true )
+                {<span class="helvetica4"> + </span>}
+
+                <br><br>
+                @if ( (c.LeatherSeats) == false )
+                {<span class="helvetica4"> - </span>  }
+                @if ( (c.LeatherSeats) == true )
+                {<span class="helvetica4"> + </span> }
+                <br><br>
+                @if ( (c.HeatedSeats) == false )
+                {<span class="helvetica4"> - </span>  }
+                @if ( (c.HeatedSeats) == true )
+                {<span class="helvetica4"> + </span> }
+
+                <br><br>
+
+                @if ( (c.Parktronic) == false )
+                {<span class="helvetica4"> - </span>  }
+                @if ( (c.Parktronic) == true )
+                {<span class="helvetica4"> + </span> }
+
+                <br><br>
+
+                @if ( (c.Ksenon) == false )
+                {<span class="helvetica4"> - </span>  }
+                @if ( (c.Ksenon) == true )
+                {<span class="helvetica4"> + </span> }
+
+                <br><br>
+
+                @if ( (c.Speakerphone) == false )
+                {<span class="helvetica4"> - </span>  }
+                @if ( (c.Speakerphone) == true )
+                {<span class="helvetica4"> + </span> }
+
+                <br><br>
+
+                @if ( (c.LegkosplavlennyeWheels) == false )
+                {<span class="helvetica4"> - </span>  }
+                @if ( (c.LegkosplavlennyeWheels) == true )
+                {<span class="helvetica4"> + </span> }
+
+                <br><br>
+
+                @if ( (c.ESP) == false )
+                {<span class="helvetica4"> - </span>  }
+                @if ( (c.ESP) == true )
+                {<span class="helvetica4"> + </span> }
+
+            </div>
+
+
+        }
+
     </div>
-
-        @foreach (var c in Model)
-{
-    <div style="float:left;margin-left:125px">
-        <span class="helvetica4">
-            @(c.Mark)
-        </span>
-
-        <br><br>
-        <span class="helvetica4">
-            @(c.Series)
-        </span>
-        <br><br>
-        <span class="helvetica4">
-            @(c.BodyType)
-        </span>
-        <br><br>
-        <span class="helvetica4">
-            @(c.FuelType)
-        </span>
-        <br><br>
-        <span class="helvetica4">
-            @(c.Transmission)
-        </span>
-        <br><br>
-        <span class="helvetica4">
-            @(c.Price)
-        </span>
-        <br><br>
-        <span class="helvetica4">
-            @(c.Year)
-        </span>
-        <br><br>
-        <span class="helvetica4">
-            @(c.Country)
-        </span>
-        <br><br>
-        <span class="helvetica4">
-            @(c.City)
-        </span>
-        <br><br>
-        <span class="helvetica4">
-            @(c.Drive)
-        </span>
-        <br><br>
-        <span class="helvetica4">
-            @(c.Color)
-        </span>
-        <br><br>
-        <span class="helvetica4">
-            @(c.Distance)
-        </span>
-        <br><br>
-        
-            @if ((c.Conditioner) == false)
-{<span class="helvetica4"> - </span> }
-@if ((c.Conditioner) == true)
-{<span class="helvetica4"> + </span>}
-           
-   <br><br>
-     @if ((c.LeatherSeats) == false)
-    {<span class="helvetica4"> - </span>  }
-    @if ((c.LeatherSeats) == true)
-    {<span class="helvetica4"> + </span> }
-               <br><br>
-            @if ((c.HeatedSeats) == false)
-    {<span class="helvetica4"> - </span>  }
-    @if ((c.HeatedSeats) == true)
-    {<span class="helvetica4"> + </span> }
-            
-            <br><br>
-           
-                @if ((c.Parktronic) == false)
-    {<span class="helvetica4"> - </span>  }
-    @if ((c.Parktronic) == true)
-    {<span class="helvetica4"> + </span> }
-           
-            <br><br>
-            
-                @if ((c.Ksenon) == false)
-    {<span class="helvetica4"> - </span>  }
-    @if ((c.Ksenon) == true)
-    {<span class="helvetica4"> + </span> }
-           
-            <br><br>
-            
-                @if ((c.Speakerphone) == false)
-    {<span class="helvetica4"> - </span>  }
-    @if ((c.Speakerphone) == true)
-    {<span class="helvetica4"> + </span> }
-            
-            <br><br>
-           
-                @if ((c.LegkosplavlennyeWheels) == false)
-    {<span class="helvetica4"> - </span>  }
-    @if ((c.LegkosplavlennyeWheels) == true)
-    {<span class="helvetica4"> + </span> }
-            
-            <br><br>
-            
-
-        @if ((c.ESP) == false)
-        {<span class="helvetica4"> - </span>  }
-        @if ((c.ESP) == true)
-    {<span class="helvetica4"> + </span> }
-   
+    <div>
     </div>
-            
-
-}
-      
-    </div>
-<div>
-</div>
 }
