@@ -2,6 +2,8 @@
 @model Car
 @{
     ViewBag.Title = "EditView";
+    ApplicationDbContext db = new ApplicationDbContext();
+    List<Picture> pictures = db.Pictures.Where(p => p.PicId == Model.CarId).ToList();
     
 }
 
@@ -204,13 +206,31 @@
             <br />  
         </div>
     </div>
-    <input type="submit" class="btn btn-success btn-large" style="margin-left:900px; align-items:center" value="Подтвердить изменения" />
+    <input type="submit" class="btn btn-success btn-large" style="margin-left:900px; align-items:center;" value="Подтвердить изменения" />
+       
+
 }
-@using (Html.BeginForm("AddPicture", "UserActions", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("EditView", "UserActions", FormMethod.Post, new {enctype = "multipart/form-data" }))
 {
-     @Html.Hidden("id", Model.CarId)
-                  <div class="editor-field">
-                    <input type="file" name="fileUpload" />
-                </div>
-        <input type="submit" class="btn btn-success btn-large" style="margin-left:900px;" value="Добавить" />
+    <h2 style="text-align:center">Галерея изображений</h2>
+    
+        <div class="editor-field">
+            <input type="file" name="fileUpload" />
+        </div>
+        <input type="submit" class="btn btn-success btn-large" style="margin-right:900px;margin-top:5px;margin-bottom:5px" value="Добавить" />
+        @Html.Hidden("CarId", Model.CarId)
+        foreach (Picture pic in pictures)
+        {
+        if (!pic.AvatarPic)
+        {
+        <div style="float:left">
+            @Html.Raw("<img style = 'width:280px; height:200px; border:1px solid rgba(0,0,225,0.3);' src=\"data:image/jpeg;base64," + Convert.ToBase64String(pic.Image) + "\" />")
+            <a href="@Url.Action("DeletePicture", "UserActions", new { picId = pic.Id })" class="btn btn-danger btn-xs" style="position:absolute">Удалить</a>
+        </div>
+        }
+
+        }
+        @Html.Hidden("CarId", Model.CarId)
+
+
 }
