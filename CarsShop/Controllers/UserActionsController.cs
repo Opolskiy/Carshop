@@ -74,10 +74,28 @@ namespace CarsShop.Controllers
             return View(car);
         }
 
-        public ActionResult EditView(Guid CarId)
+        public ActionResult EditView(Guid CarId, HttpPostedFileBase fileUpload,Picture pic)
         {
-            ApplicationDbContext Db = new ApplicationDbContext();
-            var car = Db.Cars.FirstOrDefault(c => c.CarId == CarId);
+            ApplicationDbContext db = new ApplicationDbContext();
+                     if (fileUpload != null)
+            {
+                byte[] imageData = null;
+                using (var binaryReader = new BinaryReader(fileUpload.InputStream))
+                {
+                    imageData = binaryReader.ReadBytes(fileUpload.ContentLength);
+
+                }
+                pic.Image = imageData;
+                pic.AvatarPic = false;
+                pic.PicId = CarId;
+                db.Pictures.Add(pic);
+                db.SaveChanges();
+            }
+
+                var car = db.Cars.FirstOrDefault(c => c.CarId == CarId);
+              
+  
+
             return View(car);
         }
 
@@ -85,6 +103,8 @@ namespace CarsShop.Controllers
         {
            
                 ApplicationDbContext db = new ApplicationDbContext();
+
+
                 var arr = typeof(Car).GetProperties();    
                 var changedCar = db.Cars.Where(c => c.CarId == id).ToArray()[0];
                
@@ -129,6 +149,15 @@ namespace CarsShop.Controllers
             Db.Cars.Remove(car);
             Db.SaveChanges();
             return RedirectToAction("MyDeclarations");
+        }
+        public ActionResult DeletePicture(int picId) 
+        {
+            ApplicationDbContext Db = new ApplicationDbContext();
+            var picture = Db.Pictures.FirstOrDefault(p => p.Id == picId);
+            Guid CarId = picture.PicId;
+            Db.Pictures.Remove(picture);
+            Db.SaveChanges();// public ActionResult EditView(Guid CarId, HttpPostedFileBase fileUpload,Picture pic)
+            return RedirectToAction("EditView", new { CarId });
         }
         public ActionResult AddPicture(Guid? id, HttpPostedFileBase fileUpload,Picture pic) 
         {
